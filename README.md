@@ -8,7 +8,7 @@ I have a lot to say on a lot of different topics, so choose a topic below to lin
 
 [Git]() - I know very little, but as I learn it, I will post it here :)  
 [Linux]() - And maybe more than a little Windows as well.  Compare and contrast what I learned to hate (or love) in each OS.  Sorry Mac, you get no love unless/until I get a Mac to learn to hate.  
-[Markdown](.\Markdown\MarkdownREADME.md) - Markdown is an essential skill to master for these pages, and easy enough to learn to do.  This is my Markdown Cheatsheet (and maybe a few additional posts that are related)  
+[Markdown](.\MarkdownREADME.md) - Markdown is an essential skill to master for these pages, and easy enough to learn to do.  This is my Markdown Cheatsheet (and maybe a few additional posts that are related)  
 [Powershell]() - One of my core professional competencies.  'Nuf said.  
 [Zabbix Information]() - A variety of posts and musings of what I have learned about the Zabbix open source network monitoring solution.  
 [Errata]() - a combination of odd and end postings that didn't fit anywhere else.  
