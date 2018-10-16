@@ -10,6 +10,7 @@ I have a lot to say on a lot of different topics, so choose a topic below to lin
 [Linux]() - And maybe more than a little Windows as well.  Compare and contrast what I learned to hate (or love) in each OS.  Sorry Mac, you get no love unless/until I get a Mac to learn to hate.  
 [Markdown](.\MarkdownREADME.md) - Markdown is an essential skill to master for these pages, and easy enough to learn to do.  This is my Markdown Cheatsheet (and maybe a few additional posts that are related)  
 [Powershell]() - One of my core professional competencies.  'Nuf said.  
+[The Learning List]() - This is just a simple list of things I have come across that I would like to learn or understand better  
 [Zabbix Information]() - A variety of posts and musings of what I have learned about the Zabbix open source network monitoring solution.  
 [Errata]() - a combination of odd and end postings that didn't fit anywhere else.  
 
