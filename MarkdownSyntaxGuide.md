@@ -1,4 +1,7 @@
-# Markdown syntax guide #
+---
+title: "Markdown Syntax Guide"
+date: 2018-10-18
+---
 
 ## Phrase Emphasis ##
 
