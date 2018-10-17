@@ -1,5 +1,5 @@
 ---
-title: "Markdown Index"
+title: "Markdown"
 date: 2018-10-18
 ---
 
