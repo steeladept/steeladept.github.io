@@ -1,9 +1,9 @@
 ---
-title: "Markdown"
-date: 2018-10-18
+title: "Git"
+date: 2018-10-19
 ---
 
-Here are a series of Posts I wrote related to Markdown
+Here are a series of Posts I wrote related to GIT and GITHUB.
 
 {% for category in site.categories %}
   <h3>{{ category[0] }}</h3>
