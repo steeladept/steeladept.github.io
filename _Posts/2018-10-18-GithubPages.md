@@ -26,9 +26,6 @@ Grrr... Time to go to Github and see what didn't make it.  Wait, it is there. Oh
 
 My first thought is "Oh yeah, isn't one of those restrictions I spoke of earlier, one where you can't have subfolders?"  So I qucikly moved all files to the same level.  It is messy, and I need to rename the README.md files so they don't overwrite each other, but that was easy enough.  Now it should work!
 
-And in comes my second issue - or is it an extention of the first.  Either way, it still doesn't work!  The home page works fine, but any secondary page, nope! A quick google search showed me that it isn't going to be THAT easy.  I actually have to LEARN Jekyll...
-
-
-
+And in comes my second issue - or is it an extention of the first.  Either way, it still doesn't work!  The home page works fine, but any secondary page, nope! A quick google search showed me that it isn't going to be THAT easy.  I actually have to LEARN Jekyll...But that will be for another post.
 
 [Things that make you go Hmm....](https://binged.it/2Ae4ht6)
