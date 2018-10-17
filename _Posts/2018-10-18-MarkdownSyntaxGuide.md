@@ -1,6 +1,7 @@
 ---
 title: "Markdown Syntax Guide"
 date: 2018-10-18
+categories: [Markdown]
 ---
 
 ## Phrase Emphasis ##
