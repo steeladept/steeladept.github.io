@@ -10,7 +10,7 @@ For the longest time I used OneNote for tracking my notes.  Then I ran into a jo
 
 I have a lot to say on a lot of different topics, so choose a topic below to link to the page where it is located.  If you don't know where to start, start with Errata, as there is more oddball stuff there that may amuse you if nothing else (Note that I have not enabled any of these links yet, but I will as I build them out):
 
-[Git]() - I know very little, but as I learn it, I will post it here :)  
+[Git](./GitIndex.md) - I know very little, but as I learn it, I will post it here :)  
 [Linux]() - And maybe more than a little Windows as well.  Compare and contrast what I learned to hate (or love) in each OS.  Sorry Mac, you get no love unless/until I get a Mac to learn to hate.  
 [Markdown](./MarkdownIndex.md) - Markdown is an essential skill to master for these pages, and easy enough to learn to do.  This is my Markdown Cheatsheet (and maybe a few additional posts that are related)  
 [Powershell]() - One of my core professional competencies.  'Nuf said.  
