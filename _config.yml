@@ -1,12 +1,12 @@
-title: IT Muse of Steeladept
+title: Rambling Thoughts of Steeladept
 author: Thomas Higgins
 
 description: > # this means to ignore newlines until "baseurl:"
-  The rambling notes, scribbles, and occasionally inspired
-  thoughts of an IT Generalist and DevOps Engineer.
+  The notes, scribbles, and occasionally inspired
+  musings of an IT Generalist and DevOps Engineer.
 
 # social links
-twitter_username: @DevOpsThomas
+twitter_username: DevOpsThomas
 github_username:  steeladept
 
 show_excerpts: true # set to false to remove excerpts on the homepage
