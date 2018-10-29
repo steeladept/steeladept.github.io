@@ -1,3 +1,9 @@
+---
+title: "Installing Zabbix"
+date: 2018-10-29
+categories: [Zabbix]
+---
+
 # Installing Zabbix #
 
 ## What is Zabbix ##
@@ -110,5 +116,5 @@ The Zabbix agent is a little different because it installs on every server that 
 
 [Zabbix Agent Installation Guide](.\Zabbix4AgentInstall.md)
 
-[ZabbixLayout]: .\ZabbixLayout.png "Zabbix Layout"
-[MySQL]: .\powered-by-mysql-125x64.png "MySQL Logo"
+[ZabbixLayout]: ..\_Images\ZabbixLayout.png "Zabbix Layout"
+[MySQL]: ..\_Images\powered-by-mysql-125x64.png "MySQL Logo"
