@@ -247,19 +247,13 @@ my $tables = {  'history' => { 'period' => 'day', 'keep_history' => '30'},
         'trends' => { 'period' => 'month', 'keep_history' => '12'},
         'trends_uint' => { 'period' => 'month', 'keep_history' => '12'},
         };
-my $amount_partitions = 10;
+my $amount_partitions = 4;
 
 my $curr_tz = 'Etc/UTC';
 
 my $part_tables;
 
 my $dbh = DBI->connect($dsn, $db_user_name, $db_password);
-
-unless ( check_have_partition() ) {
-    print "Your installation of MySQL does not support table partitioning.\n";
-    syslog(LOG_CRIT, 'Your installation of MySQL does not support table partitioning.');
-    exit 1;
-}
 
 my $sth = $dbh->prepare(qq{SELECT table_name, partition_name, lower(partition_method) as partition_method,
                     rtrim(ltrim(partition_expression)) as partition_expression,
@@ -287,20 +281,6 @@ foreach my $key (sort keys %{$tables}) {
 delete_old_data();
 
 $dbh->disconnect();
-
-sub check_have_partition {
-    my $result = 0;
-
-    my $sth = $dbh->prepare(qq{SELECT plugin_status FROM information_schema.plugins WHERE plugin_name = 'partition'});
-
-    $sth->execute();
-
-    my $row = $sth->fetchrow_array();
-
-    $sth->finish();
-
-    return 1 if $row eq 'ACTIVE';
-}
 
 sub create_next_partition {
     my $table_name = shift;
