@@ -12,7 +12,7 @@ linkedin_username:
 
 show_excerpts: true # set to false to remove excerpts on the homepage
 
-theme: jekyll-theme-merlot
+theme: jekyll-theme-dinky
 baseurl: ""
 
 #
