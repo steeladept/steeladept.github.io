@@ -1,3 +1,2 @@
-# Welcome to Steeladept's Github Pages #
+# Initial page
 
-For the longest time I used OneNote for tracking my notes.  Then I ran into a job where it was Linux only and we couldn't use OneNote.  OneNote alternatives, such as Evernote never worked for me, so I kept on the lookout for a good note taking solution.  Wiki's seemed the way to go, but were always needlessly complicated to write a note.  Other software solutions always had drawbacks of one sort or another.  Even using Markdown had it's organizational drawbacks (to be fair, I never tried it when I was looking).  Recently, I started attending the [Pittsburgh LittleHacks](https://capozza.io/little-hack/) where I learned of using Markdown with GitHub Pages which seems to be the right combination for ease of use, cross platform, broad avialability, and portability.  As such, this is but the start to my ramblings....
