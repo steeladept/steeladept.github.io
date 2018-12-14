@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="">
+<meta name="keywords" content="getting_startedzabbixzabbix agent,  zabbix agent">
+<title>Installing Zabbix Agent | Steeladept’s Github Pages</title>
+<link rel="stylesheet" href="css/syntax.css">
+
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<!--<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">-->
+<link rel="stylesheet" href="css/modern-business.css">
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<link rel="stylesheet" href="css/customstyles.css">
+<link rel="stylesheet" href="css/boxshadowproperties.css">
+<!-- most color styles are extracted out to here -->
+<link rel="stylesheet" href="css/theme-green-dark.css">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+<script src="js/jquery.navgoco.min.js"></script>
+
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<!-- Anchor.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/2.0.0/anchor.min.js"></script>
+<script src="js/toc.js"></script>
+<script src="js/customscripts.js"></script>
+
+<link rel="shortcut icon" href="images/favicon.ico">
+
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+
+<link rel="alternate" type="application/rss+xml" title="documentation-theme-jekyll" href="http://localhost:4000/feed.xml">
+
+    <script>
+        $(document).ready(function() {
+            // Initialize navgoco with default options
+            $("#mysidebar").navgoco({
+                caretHtml: '',
+                accordion: true,
+                openClass: 'active', // open
+                save: false, // leave false or nav highlighting doesn't work right
+                cookie: {
+                    name: 'navgoco',
+                    expires: false,
+                    path: '/'
+                },
+                slide: {
+                    duration: 400,
+                    easing: 'swing'
+                }
+            });
+
+            $("#collapseAll").click(function(e) {
+                e.preventDefault();
+                $("#mysidebar").navgoco('toggle', false);
+            });
+
+            $("#expandAll").click(function(e) {
+                e.preventDefault();
+                $("#mysidebar").navgoco('toggle', true);
+            });
+
+        });
+
+    </script>
+    <script>
+        $(function () {
+            $('[data-toggle="tooltip"]').tooltip()
+        })
+    </script>
+    <script>
+        $(document).ready(function() {
+            $("#tg-sb-link").click(function() {
+                $("#tg-sb-sidebar").toggle();
+                $("#tg-sb-content").toggleClass('col-md-9');
+                $("#tg-sb-content").toggleClass('col-md-12');
+                $("#tg-sb-icon").toggleClass('fa-toggle-on');
+                $("#tg-sb-icon").toggleClass('fa-toggle-off');
+            });
+        });
+    </script>
+    
+
+</head>
+<body>
+<!-- Navigation -->
+<nav class="navbar navbar-inverse navbar-static-top">
+    <div class="container topnavlinks">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="fa fa-home fa-lg navbar-brand" href="index.html">&nbsp;<span class="projectTitle"> Rambling Thoughts of Steeladept</span></a>
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <!-- toggle sidebar button -->
+                <li><a id="tg-sb-link" href="#"><i id="tg-sb-icon" class="fa fa-toggle-on"></i> Nav</a></li>
+                <!-- entries without drop-downs appear here -->
+
+
+
+
+                
+                
+                
+                <li><a href="news">Latest Posts</a></li>
+                
+                
+                
+                <!-- entries with drop-downs appear here -->
+                <!-- conditional logic to control which topnav appears for the audience defined in the configuration file.-->
+                
+                
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Projects<b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        
+                        
+                        <li><a href="git">Git & GitHub</a></li>
+                        
+                        
+                        
+                        <li><a href="jekyll">Jekyll</a></li>
+                        
+                        
+                        
+                        <li><a href="linux">Linux</a></li>
+                        
+                        
+                        
+                        <li><a href="markdown">Markdown</a></li>
+                        
+                        
+                        
+                        <li><a href="powershell">Powershell</a></li>
+                        
+                        
+                        
+                        <li><a href="vmware">VMware</a></li>
+                        
+                        
+                        
+                        <li class="dropdownActive"><a href="zabbix">Zabbix</a></li>
+                        
+                        
+                    </ul>
+                </li>
+                
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Living Life<b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        
+                        
+                        <li><a href="">About</a></li>
+                        
+                        
+                    </ul>
+                </li>
+                
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Jekyll Help<b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        
+                        
+                        <li><a href="https://github.com/tomjoht/documentation-theme-jekyll" target="_blank">Jekyll Doc Theme Download (this theme)</a></li>
+                        
+                        
+                        
+                        <li><a href="jekylldocs.html">Getting started with Jekyll Doc Theme</a></li>
+                        
+                        
+                        
+                        <li><a href="https://talk.jekyllrb.com" target="_blank">Jekyll Talk</a></li>
+                        
+                        
+                        
+                        <li><a href="http://jekyllrb.com/docs/home/" target="_blank">Jekyll documentation</a></li>
+                        
+                        
+                        
+                        <li><a href="http://stackoverflow.com/questions/tagged/jekyll" target="_blank">Jekyll on Stack Overflow</a></li>
+                        
+                        
+                        
+                        <li><a href="http://idratherbewriting.com/category-jekyll/" target="_blank">Jekyll on my blog</a></li>
+                        
+                        
+                    </ul>
+                </li>
+                
+                
+                
+                <!--comment out this block if you want to hide search-->
+                <li>
+                    <!--start search-->
+                    <div id="search-demo-container">
+                        <input type="text" id="search-input" placeholder="search...">
+                        <ul id="results-container"></ul>
+                    </div>
+                    <script src="js/jekyll-search.js" type="text/javascript"></script>
+                    <script type="text/javascript">
+                            SimpleJekyllSearch.init({
+                                searchInput: document.getElementById('search-input'),
+                                resultsContainer: document.getElementById('results-container'),
+                                dataSource: 'search.json',
+                                searchResultTemplate: '<li><a href="{url}" title="Installing Zabbix Agent">{title}</a></li>',
+                    noResultsText: 'No results found.',
+                            limit: 10,
+                            fuzzy: true,
+                    })
+                    </script>
+                    <!--end search-->
+                </li>
+            </ul>
+        </div>
+        </div>
+        <!-- /.container -->
+</nav>
+
+<!-- Page Content -->
+<div class="container">
+  <div id="main">
+    <!-- Content Row -->
+    <div class="row">
+        
+        
+            <!-- Sidebar Column -->
+            <div class="col-md-3" id="tg-sb-sidebar">
+                <p><img src="images/site_logo.png" alt="Site logo"/></p>
+
+
+<ul id="mysidebar" class="nav">
+  <li class="sidebarTitle">Zabbix 4.0</li>
+  
+  
+  
+      
+  
+  <li>
+      <a href="#">Overview</a>
+      <ul>
+          
+          
+          
+          <li><a href="zabbix.html">Get started</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a href="zabbixdb.html">Installing MySQL Database</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a href="zabbixserver.html">Installing Zabbix Application Server</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a href="zabbixweb.html">Installing Apache Web Server for Zabbix</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a href="zabbixproxy.html">Installing Zabbix Proxy Server</a></li>
+          
+          
+          
+          
+          
+          
+          <li class="active"><a href="zabbixagent.html">Installing Zabbix Agent</a></li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+      
+      <!-- if you aren't using the accordion, uncomment this block:
+         <p class="external">
+             <a href="#" id="collapseAll">Collapse All</a> | <a href="#" id="expandAll">Expand All</a>
+         </p>
+         -->
+</ul>
+
+<!-- this highlights the active parent class in the navgoco sidebar. this is critical so that the parent expands when you're viewing a page. This must appear below the sidebar code above. Otherwise, if placed inside customscripts.js, the script runs before the sidebar code runs and the class never gets inserted.-->
+<script>$("li.active").parents('li').toggleClass("active");</script>
+
+            </div>
+            
+        
+
+        <!-- Content Column -->
+        <div class="col-md-9" id="tg-sb-content">
+            <div class="post-header">
+   <h1 class="post-title-main">Installing Zabbix Agent</h1>
+   <p class="post-meta">Oct 29, 2018</p>
+</div>
+
+
+
+<div class="post-content">
+
+   
+
+    
+    
+<!-- this handles the automatic toc. use ## for subheads to auto-generate the on-page minitoc. if you use html tags, you must supply an ID for the heading element in order for it to appear in the minitoc. -->
+<script>
+$( document ).ready(function() {
+  // Handler for .ready() called.
+
+$('#toc').toc({ minimumHeaders: 0, listType: 'ul', showSpeed: 0, headers: 'h2,h3,h4' });
+
+/* this offset helps account for the space taken up by the floating toolbar. */
+$('#toc').on('click', 'a', function() {
+  var target = $(this.getAttribute('href'))
+    , scroll_target = target.offset().top
+
+  $(window).scrollTop(scroll_target - 10);
+  return false
+})
+  
+});
+</script>
+
+<div id="toc"></div>
+
+    
+
+
+    
+
+   <p>The Zabbix Agent is a component that will see a LOT of variations based on your personal configuration. The below examples are set to correspond to what I needed in my environment and should be accepted as examples, and not mandatory.  In particular, setting of Hostname and/or HostMetadata will be very dependent on how you configure your
+application server via the frontend.  In my case, I set it up for autoregistration assuming the machines are mostly windows (I just set a default Linux bucket rather than differentiating, though that might be added later), and that the host name is properly configured on the machine (both windows and linux).  If either of these settings to not match expectations, the server will not autoregister as expected and will hence look strange in the zabbix application.  Don’t worry, there are ways to fix that too, both by adjusting it in the agent, and/or options in the application to identify it properly.</p>
+
+<blockquote>
+  <p>NOTE, THIS STUFF ISN’T WORKING YET<strong>**</strong>***</p>
+</blockquote>
+
+<p>Before installing the agent, if you will be securing it via certificates, be sure to secure the certificates you will use.</p>
+
+<p>If this is completely internal and self-signed certificates are sufficient for your purposes, use the following procedure:</p>
+
+<ul>
+  <li>Create the Self-Signed Cert (INTERNAL USE ONLY)</li>
+</ul>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$mkdir</span> <span class="nt">-p</span> /etc/zabbix/private_agent
+<span class="nv">$chmod</span> 700 /etc/zabbix/private_agent
+<span class="nv">$openssl</span> req <span class="nt">-x509</span> <span class="nt">-nodes</span> <span class="nt">-days</span> 365 <span class="nt">-newkey</span> rsa:2048 <span class="nt">-keyout</span> /etc/zabbix/private_agent/agent-selfsigned.key <span class="nt">-out</span> /etc/zabbix/agent-selfsigned.crt
+</code></pre></div></div>
+
+<blockquote>
+  <p>NOTE, ABOVE ISN’T WORKING YET<strong>**</strong>***</p>
+</blockquote>
+
+<h2 id="windows-install">Windows Install</h2>
+
+<p>Since Zabbix is a Linux system, it isn’t as easy to install the service for windows as it is for Linux.  However, it is easy to download the precompiled agent and use that with the configuration file.</p>
+
+<ul>
+  <li>
+    <p>Download the Zabbix Precompiled Windows Agent</p>
+  </li>
+  <li>
+    <p>Configure the conf file for core settings</p>
+  </li>
+</ul>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code># Edit the following lines to match the required settings listed below:
+LogFile=C:\Zabbix\logs\zabbix_agentd.log
+#At a minimum, edit the following lines to point to the appropriate proxy and/or server
+PidFile=/var/run/zabbix/zabbix_agentd.pid
+LogFile=/var/log/zabbix/zabbix_agentd.log
+LogFileSize=0
+EnableRemoteCommands=1
+LogRemoteCommands=1
+#       List of comma delimited IP addresses, optionally in CIDR notation of Zabbix servers and Zabbix proxies.
+#       Incoming connections will be accepted only from the hosts listed here.
+Server=&lt;ServerIP Addresses&gt; # NOTE:  DNS NAMES DO NOT SEEM TO WORK, AT LEAST IN OUR ENVIRONMENT.  MAY BE DNS RELATED, OR A ZABBIX ISSUE - DID NOT TRY TO DETERMINE
+#       List of comma delimited Zabbix servers and Zabbix proxies for active checks.
+ServerActive=&lt;ServerIP Addresses&gt; # NOTE:  RECOMMEND ONLY ONE SERVER IDENTIFIED TO PREVENT CONFUSION
+Hostname=Zabbix Server #  &lt;--REMOVE OR COMMENT OUT THIS LINE - IT WILL PULL FROM HOSTNAME
+HostMetadata=&lt;Appropriate Metadata Tag as defined in Frontend&gt;
+Include=/etc/zabbix/zabbix_agentd.d/*.conf
+</code></pre></div></div>
+
+<ul>
+  <li>Configure Security for Zabbix Agent</li>
+</ul>
+
+<p><strong>TBD</strong></p>
+
+<h2 id="linux-install">Linux Install</h2>
+
+<p>On Zabbix Servers, many of these steps may be bypassed, since they are already done for the installation of Zabbix itself.</p>
+
+<h3 id="redhatcentos-7x">RedHat\CENTOS 7.x</h3>
+
+<p>Other RedHat versions are similar.  See the Zabbix documentation to determine the correct repo to install.</p>
+
+<ul>
+  <li>Install the Zabbix Repository</li>
+</ul>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$rpm</span> <span class="nt">-ivh</span> https://repo.zabbix.com/zabbix/4.0/rhel/7/x86_64/zabbix-release-4.0-1.el7.noarch.rpm
+</code></pre></div></div>
+
+<ul>
+  <li>Install Zabbix Agent</li>
+</ul>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$yum</span> <span class="nt">-y</span> install zabbix-agent
+</code></pre></div></div>
+
+<ul>
+  <li>Configure the Zabbix Agent</li>
+</ul>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$vim</span> /etc/zabbix/zabbix_agentd.conf
+
+<span class="c">#At a minimum, edit the following lines to point to the appropriate proxy and/or server</span>
+<span class="nv">PidFile</span><span class="o">=</span>/var/run/zabbix/zabbix_agentd.pid
+<span class="nv">LogFile</span><span class="o">=</span>/var/log/zabbix/zabbix_agentd.log
+<span class="nv">LogFileSize</span><span class="o">=</span>0
+<span class="nv">EnableRemoteCommands</span><span class="o">=</span>1
+<span class="nv">LogRemoteCommands</span><span class="o">=</span>1
+<span class="c">#       List of comma delimited IP addresses, optionally in CIDR notation of Zabbix servers and Zabbix proxies.</span>
+<span class="c">#       Incoming connections will be accepted only from the hosts listed here.</span>
+<span class="nv">Server</span><span class="o">=</span>&lt;ServerIP Addresses&gt; <span class="c"># NOTE:  DNS NAMES DO NOT SEEM TO WORK, AT LEAST IN OUR ENVIRONMENT.  MAY BE DNS RELATED, OR A ZABBIX ISSUE - DID NOT TRY TO DETERMINE</span>
+<span class="c">#       List of comma delimited Zabbix servers and Zabbix proxies for active checks.</span>
+<span class="nv">ServerActive</span><span class="o">=</span>&lt;ServerIP Addresses&gt; <span class="c"># NOTE:  RECOMMEND ONLY ONE SERVER IDENTIFIED TO PREVENT CONFUSION</span>
+<span class="nv">Hostname</span><span class="o">=</span>Zabbix Server <span class="c">#  &lt;--REMOVE OR COMMENT OUT THIS LINE - IT WILL PULL FROM HOSTNAME</span>
+<span class="nv">HostMetadata</span><span class="o">=</span>Linux
+<span class="nv">Include</span><span class="o">=</span>/etc/zabbix/zabbix_agentd.d/<span class="k">*</span>.conf
+</code></pre></div></div>
+
+<ul>
+  <li>Configure Security for Zabbix Agent</li>
+</ul>
+
+<p><strong>TBD</strong></p>
+
+<h3 id="ubuntu-1604x">Ubuntu 16.04.x</h3>
+
+<p>Other Debian-based versions are similar.  See the Zabbix documentation to determine the correct repo and installation commands to install.</p>
+
+<ul>
+  <li>Install the Zabbix Repository</li>
+</ul>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$wget</span> https://repo.zabbix.com/zabbix/4.0/ubuntu/pool/main/z/zabbix-release/zabbix-release_4.0-2+xenial_all.deb
+<span class="nv">$dpkg</span> <span class="nt">-i</span> zabbix-release_4.0-2+xenial_all.deb
+<span class="nv">$apt</span> update
+</code></pre></div></div>
+
+<ul>
+  <li>Install Zabbix Agent</li>
+</ul>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$apt</span> install zabbix-agent
+</code></pre></div></div>
+
+<ul>
+  <li>Configure the Zabbix Agent</li>
+</ul>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$vim</span> /etc/zabbix/zabbix_agentd.conf
+
+<span class="c">#At a minimum, edit the following lines to point to the appropriate proxy and/or server</span>
+<span class="nv">PidFile</span><span class="o">=</span>/var/run/zabbix/zabbix_agentd.pid
+<span class="nv">LogFile</span><span class="o">=</span>/var/log/zabbix/zabbix_agentd.log
+<span class="nv">LogFileSize</span><span class="o">=</span>0
+<span class="nv">EnableRemoteCommands</span><span class="o">=</span>1
+<span class="nv">LogRemoteCommands</span><span class="o">=</span>1
+<span class="c">#       List of comma delimited IP addresses, optionally in CIDR notation of Zabbix servers and Zabbix proxies.</span>
+<span class="c">#       Incoming connections will be accepted only from the hosts listed here.</span>
+<span class="nv">Server</span><span class="o">=</span>&lt;ServerIP Addresses&gt; <span class="c"># NOTE:  DNS NAMES DO NOT SEEM TO WORK, AT LEAST IN OUR ENVIRONMENT.  MAY BE DNS RELATED, OR A ZABBIX ISSUE - DID NOT TRY TO DETERMINE</span>
+<span class="c">#       List of comma delimited Zabbix servers and Zabbix proxies for active checks.</span>
+<span class="nv">ServerActive</span><span class="o">=</span>&lt;ServerIP Addresses&gt; <span class="c"># NOTE:  RECOMMEND ONLY ONE SERVER IDENTIFIED TO PREVENT CONFUSION</span>
+<span class="nv">Hostname</span><span class="o">=</span>Zabbix Server <span class="c">#  &lt;--REMOVE OR COMMENT OUT THIS LINE - IT WILL PULL FROM HOSTNAME</span>
+<span class="nv">HostMetadata</span><span class="o">=</span>Linux
+<span class="nv">Include</span><span class="o">=</span>/etc/zabbix/zabbix_agentd.d/<span class="k">*</span>.conf
+</code></pre></div></div>
+
+<ul>
+  <li>Configure Security for Zabbix Agent</li>
+</ul>
+
+<p><strong>TBD</strong></p>
+
+<hr />
+
+
+    <div class="tags">
+        
+        <b>Tags: </b>
+        
+        
+        
+        <a href="tag_getting_started.html" class="btn btn-default navbar-btn cursorNorm" role="button">getting_started</a>
+        
+        
+        
+        <a href="tag_zabbix.html" class="btn btn-default navbar-btn cursorNorm" role="button">zabbix</a>
+        
+        
+        
+        
+        
+    </div>
+
+
+
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'steeladept'; // required: replace example with your forum shortname
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+
+
+</div>
+
+<hr class="shaded"/>
+
+<footer>
+            <div class="row">
+                <div class="col-lg-12 footer">
+               &copy;2018 steeladept. All rights reserved. <br />
+<span>Page last updated:</span> Oct 29, 2018<br/> Site last generated: Dec 14, 2018 <br />
+                </div>
+            </div>
+</footer>
+
+
+        </div>
+    <!-- /.row -->
+</div>
+<!-- /.container -->
+</div>
+<!-- /#main -->
+    </div>
+
+</body>
+
+</html>
