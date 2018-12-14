@@ -1,0 +1,53 @@
+# This is your sidebar TOC. The sidebar code loops through sections here and provides the appropriate formatting.
+
+entries:
+- title: sidebar
+  product: Zabbix
+  version: 4.0
+  folders:
+
+  - title:
+    output: pdf
+    type: frontmatter
+    folderitems:
+    - title:
+      url: /titlepage.html
+      output: pdf
+      type: frontmatter
+    - title:
+      url: /tocpage.html
+      output: pdf
+      type: frontmatter
+
+  - title: Overview
+    output: web, pdf
+    folderitems:
+
+    - title: Get started
+      url: /zabbix.html
+      output: web, pdf
+      type: homepage
+
+#    - title: Planning your installation  #<- Break out from the original zabbix page
+#      url: /planningzabbix.html
+#      output: web, pdf
+
+    - title: Installing MySQL Database
+      url: /zabbixdb.html
+      output: web, pdf
+
+    - title: Installing Zabbix Application Server
+      url: /zabbixserver.html
+      output: web, pdf
+
+    - title: Installing Apache Web Server for Zabbix
+      url: /zabbixweb.html
+      output: web, pdf
+
+    - title: Installing Zabbix Proxy Server
+      url: /zabbixproxy.html
+      output: web, pdf
+
+    - title: Installing Zabbix Agent
+      url: /zabbixagent.html
+      output: web, pdf

@@ -1,0 +1,78 @@
+# This is your sidebar TOC. The sidebar code loops through sections here and provides the appropriate formatting.
+
+entries:
+- title: sidebar
+  product: Jekyll Documentation
+  version: 
+  folders:
+
+  - title:
+    output: pdf
+    type: frontmatter
+    folderitems:
+    - title:
+      url: /titlepage.html
+      output: pdf
+      type: frontmatter
+    - title:
+      url: /tocpage.html
+      output: pdf
+      type: frontmatter
+
+  - title: Overview
+    output: web, pdf
+    folderitems:
+
+    - title: Get started with Jekyll
+      url: /jekyll.html
+      output: web, pdf
+      type: homepage
+
+    - title: Beginning the Journey
+      url: /jekyllstart.html
+      output: web, pdf
+
+    - title: Jekyll Concepts and Structures
+      url: /jekyllconcepts.html
+      output: web, pdf
+
+#    - title: Selecting a Theme
+#      url: 
+#      output: web, pdf
+
+#    - title: Posting a page
+#      url: 
+#      output: web, pdf
+
+#    - title: Getting more out of themes
+#      url: 
+#      output: web, pdf
+
+#    - title: Using alternatvie Static site generators
+#      url: 
+#      output: web, pdf
+  
+  - title: Reference Documentation
+    output: web
+    folderitems:
+
+    - title: Jekyll Document Theme
+      url: /jekylldocs.html
+      output: web
+      type: homepage
+
+    - title: Jekyll Document Theme owners blog
+      external_url: http://idratherbewriting.com/category-jekyll/
+      output: web
+
+    - title: Jekyll Talk
+      external_url: https://talk.jekyllrb.com
+      output: web
+
+    - title: Jekyll documentation
+      external_url: http://jekyllrb.com/docs/home/
+      output: web
+
+    - title: Jekyll on Stack Overflow
+      external_url: http://stackoverflow.com/questions/tagged/jekyll
+      output: web

@@ -1,79 +1,32 @@
+---
+search: exclude
+layout: none
+---
+
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
-        <title>documentation-theme-jekyll</title>
-        <description>A Jekyll-based theme designed for documentation and help systems. See the link for detailed instructions on setting up and configuring everything.</description>
-        <link>http://localhost:4000/</link>
-        <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-        <pubDate>Fri, 14 Dec 2018 09:52:50 -0500</pubDate>
-        <lastBuildDate>Fri, 14 Dec 2018 09:52:50 -0500</lastBuildDate>
-        <generator>Jekyll v3.7.4</generator>
-        
+        <title>{{ site.title | xml_escape }}</title>
+        <description>{{ site.description | xml_escape }}</description>
+        <link>{{ site.url }}/</link>
+        <atom:link href="{{ "/feed.xml" | prepend: site.url }}" rel="self" type="application/rss+xml"/>
+        <pubDate>{{ site.time | date_to_rfc822 }}</pubDate>
+        <lastBuildDate>{{ site.time | date_to_rfc822 }}</lastBuildDate>
+        <generator>Jekyll v{{ jekyll.version }}</generator>
+        {% for post in site.posts limit:10 %}
         <item>
-            <title>Jekyll Issues- Issue 2: Special Characters</title>
-            <description>&lt;h2 id=&quot;problem&quot;&gt;Problem&lt;/h2&gt;
-
-&lt;p&gt;As I was posting these pages internally, I kept having issues with one of my Git posts.  It is titled “Git”ting started, and the quotes are included.  Since quotes aren’t generally an issue, I didn’t think anything of it, but when I would build Jekyll, it kept placing the page in a very different place, causing the page to come up as &lt;strong&gt;404 - File not found&lt;/strong&gt; whenever I would build the site and navigate to where that page should be.  I had no other issues with any pages, and I verified it was setup exactly the same.&lt;/p&gt;
-
-&lt;p&gt;I kept getting confused, so I looked at the site, and sure enough, the html file was not where it should be.  Instead, it was 3 folders deep in a _site/pages/git/getstart.html. My next stop was the command line where Jekyll built the site.  I was getting a &lt;strong&gt;‘YAML Exception …/pages/git/gitstart.md: &lt;code class=&quot;highlighter-rouge&quot;&gt;(&amp;lt;unknown&amp;gt;)&lt;/code&gt;: did not find expected ky while parsing a block mapping at line 2 column 1’&lt;/strong&gt;.  What the heck does that mean?&lt;/p&gt;
-
-&lt;h2 id=&quot;resolving-issue-2&quot;&gt;Resolving Issue 2&lt;/h2&gt;
-
-&lt;p&gt;Well at least the error gave an address.  Looking at line 2, I saw it was the title line in the frontmatter of the file.  That title had the quotes in it.  I thought to myself, “I wonder if that is what is causing the issue”.  My scripting experience has seen tons of issues with characters such as these, and in many cases you need to escape them - however they are not typically an issue with .md files.  However, with Jekyll….&lt;/p&gt;
-
-&lt;p&gt;But no, that can’t be it.  After all, I have quotes in my summary, quotes around other titles, there are quotes everywhere in my frontmatter.  That can’t be it, or can it?  I mean the quote does end in the middle.  And it isn’t like the site is coming up at all, so maybe the string is confusing it.  Getting ready for a long trip of StackOverflow reading, I tried the easy fix first:&lt;/p&gt;
-
-&lt;p&gt;So I enclosed the whole title in single quotes -‘“Git”ting Started’&lt;/p&gt;
-
-&lt;p&gt;Recompiled Jekyll, and no more issue.  What’s more, it shows on the page, just as I would expect.  No single quotes, with the double quotes.   –&lt;em&gt;Win!&lt;/em&gt;–&lt;/p&gt;
-
-&lt;p&gt;Now I have more time for the next blog.&lt;/p&gt;
-
-&lt;hr /&gt;
-</description>
-            <pubDate>Fri, 14 Dec 2018 00:00:00 -0500</pubDate>
-            <link>http://localhost:4000/jekyllissues2.html</link>
-            <guid isPermaLink="true">http://localhost:4000/jekyllissues2.html</guid>
-            
-            <category>news</category>
-            
-            <category>getting_started</category>
-            
-            <category>jekyll</category>
-            
-            <category>troubleshooting</category>
-            
-            
+            <title>{{ post.title | xml_escape }}</title>
+            <description>{{ post.content | xml_escape }}</description>
+            <pubDate>{{ post.date | date_to_rfc822 }}</pubDate>
+            <link>{{ post.url | prepend: site.url }}</link>
+            <guid isPermaLink="true">{{ post.url | prepend: site.url }}</guid>
+            {% for tag in post.tags %}
+            <category>{{ tag | xml_escape }}</category>
+            {% endfor %}
+            {% for tag in page.tags %}
+            <category>{{ cat | xml_escape }}</category>
+            {% endfor %}
         </item>
-        
-        <item>
-            <title>Jekyll Issues- Issue 1: Linking Pages</title>
-            <description>&lt;h2 id=&quot;problem&quot;&gt;Problem&lt;/h2&gt;
-
-&lt;p&gt;When I started with Jekyll, one of the things I wanted to be able to do (this is html after all) is cross-link pages for easier reference.  External references seemed easy enough, but internal references never seemed to work.  I could usually navigate to them if I kept them all on the same level, or even if they were in subfolders that I properly provided paths to, but the links would always fail.&lt;/p&gt;
-
-&lt;h2 id=&quot;resolution&quot;&gt;Resolution&lt;/h2&gt;
-
-&lt;p&gt;The key was that when Jekyll does a build, the resulting site that you are viewing was rendered by the build engine into html files instead of md files. I would try to reference jekyll.md, for example, and it would work, because the browser could read and display .md files.  However, the link in the .md file was converted to point to the .html file in the _sites folder; so each time I would reference the link, it wouldn’t find a .md file in the _sites folder, and fail.  Once I changed the links to .html instead, they mostly worked. FIX - Change the extension the link points to.&lt;/p&gt;
-
-&lt;p&gt;I say mostly, because the theme I was using at the time did support permalinks, and while experimenting with them, I had some set.  However, in the link, I wouldn’t link to the permalink, instead I would try to link to the page title itself.  This extension of the original issue took a long time to resolve, and it wasn’t until I got deep into the inner workings of the Jekyll Document Theme that I stumbled upon that little error and finally was able to explain why those sites didn’t work for me.  FIX - don’t use permalinks, or reference the permalink instead of the page title.&lt;/p&gt;
-
-&lt;hr /&gt;
-</description>
-            <pubDate>Thu, 06 Dec 2018 00:00:00 -0500</pubDate>
-            <link>http://localhost:4000/jekyllissues1.html</link>
-            <guid isPermaLink="true">http://localhost:4000/jekyllissues1.html</guid>
-            
-            <category>news</category>
-            
-            <category>getting_started</category>
-            
-            <category>jekyll</category>
-            
-            <category>troubleshooting</category>
-            
-            
-        </item>
-        
+        {% endfor %}
     </channel>
 </rss>

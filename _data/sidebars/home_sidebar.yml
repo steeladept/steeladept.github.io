@@ -1,0 +1,45 @@
+# This is your sidebar TOC. The sidebar code loops through sections here and provides the appropriate formatting.
+
+entries:
+- title: Sidebar
+  levels: one
+  folders:
+
+  - title: Latest Posts
+    url: /news.html
+    output: web
+  - title: Projects
+    output: web
+    folderitems:
+    - title: Git & GitHub
+      url: /git
+      output: web
+    - title: Jekyll
+      url: /jekyll
+      output: web
+    - title: Linux
+      url: /linux
+      output: web
+    - title: Markdown
+      url: /markdown
+      output: web
+    - title: Powershell
+      url: /powershell
+      output: web
+    - title: VMware
+      url: /vmware
+      output: web
+    - title: Zabbix
+      url: /Installing_Zabbix
+      output: web
+  - title: Living Life
+    output: web
+    folderitems:
+# Actual titles to be determined once I start writing.  Ideas included below:
+#    - title: Christianity
+#      url:
+#      output: web
+#    - title: Raising Kids
+#      url:
+#      output: web
+

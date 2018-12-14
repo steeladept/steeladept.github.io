@@ -1,0 +1,57 @@
+# This is your sidebar TOC. The sidebar code loops through sections here and provides the appropriate formatting.
+
+entries:
+- title: sidebar
+  product: Powershell Documentation
+  version: 
+  folders:
+
+  - title:
+    output: pdf
+    type: frontmatter
+    folderitems:
+    - title:
+      url: /titlepage.html
+      output: pdf
+      type: frontmatter
+    - title:
+      url: /tocpage.html
+      output: pdf
+      type: frontmatter
+
+  - title: Overview
+    output: web, pdf
+    folderitems:
+
+    - title: Getting Started
+      url: /powershell.html
+      output: web, pdf
+      type: homepage
+
+    - title: Powershell Constants
+      url: 
+      output: web, pdf
+
+    - title: Powershell Remoting
+      url: 
+      output: web, pdf
+
+    - title: Interacting with the Internet using Powershell
+      url: 
+      output: web, pdf
+
+  - title: Scripts
+    output: web, pdf
+    folderitems:
+
+    - title: Base Template
+      url: /psbasetemplate.html
+      output: web, pdf
+      type: homepage
+
+    - title: <script name>
+      url: 
+      output: web, pdf
+
+
+

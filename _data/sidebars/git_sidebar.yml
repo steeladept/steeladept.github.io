@@ -1,0 +1,50 @@
+# This is your sidebar TOC. The sidebar code loops through sections here and provides the appropriate formatting.
+
+entries:
+- title: sidebar
+  product: Git & GitHub Documentation
+  version: 
+  folders:
+
+  - title:
+    output: pdf
+    type: frontmatter
+    folderitems:
+    - title:
+      url: /titlepage.html
+      output: pdf
+      type: frontmatter
+    - title:
+      url: /tocpage.html
+      output: pdf
+      type: frontmatter
+
+  - title: Git Overview
+    output: web, pdf
+    folderitems:
+
+    - title: Git vs GitHub
+      url: /git.html
+      output: web, pdf
+      type: homepage
+
+    - title: Git Started
+      url: /gitstart.html
+      output: web, pdf
+
+  - title: GitHub Pages Overview
+    output: web, pdf
+    folderitems:
+
+    - title: Getting started with GitHub Pages
+      url: /GithubPages.html
+      output: web, pdf
+      type: homepage
+
+    - title: GitHub Pages Setup
+      url: /GithubPagesSetup.html
+      output: web, pdf
+
+    - title: GitHub Pages Maintenance
+      url: /GithubPagesMaint.html
+      output: web, pdf
