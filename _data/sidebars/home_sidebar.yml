@@ -32,7 +32,7 @@ entries:
       url: /vmware
       output: web
     - title: Zabbix
-      url: /Installing_Zabbix
+      url: /zabbix
       output: web
 #  - title: Living Life
 #    output: web
