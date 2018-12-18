@@ -5,10 +5,10 @@ entries:
   levels: one
   folders:
   - title: Latest Posts
-    output:web
+    output: web
     folderitems:
     - title: News Posts 
-      url: /news.html
+      url: /news
       output: web
   - title: Projects
     output: web
