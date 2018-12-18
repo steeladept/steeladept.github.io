@@ -51,3 +51,40 @@ entries:
     - title: Installing Zabbix Agent
       url: /zabbixagent.html
       output: web, pdf
+
+  - title: Administration
+    output: web, pdf
+    folderitems:
+
+    - title: Introduction
+      url: /zabbixzabbixAdmin.html
+      output: web, pdf
+      type: homepage
+
+#    - title: Network Monitoring
+#      url: /
+#      output: web, pdf
+#
+#    - title: Server Monitoring
+#      url: /
+#      output: web, pdf
+#
+#    - title: Service Monitoring
+#      url: /
+#      output: web, pdf
+#
+#    - title: Site Monitoring
+#      url: /
+#      output: web, pdf
+#
+#    - title: Event Correlation
+#      url: /
+#      output: web, pdf
+#
+#    - title: Zabbix Automation
+#      url: /
+#      output: web, pdf
+#
+    - title: Zabbix Automation - AutoRegistration
+      url: /zabbixautoreg.html
+      output: web, pdf
