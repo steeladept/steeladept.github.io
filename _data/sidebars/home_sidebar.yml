@@ -4,10 +4,12 @@ entries:
 - title: Sidebar
   levels: one
   folders:
-
   - title: Latest Posts
-    url: /news.html
-    output: web
+    output:web
+    folderitems:
+    - title: News Posts 
+      url: /news.html
+      output: web
   - title: Projects
     output: web
     folderitems:
@@ -32,9 +34,9 @@ entries:
     - title: Zabbix
       url: /Installing_Zabbix
       output: web
-  - title: Living Life
-    output: web
-    folderitems:
+#  - title: Living Life
+#    output: web
+#    folderitems:
 # Actual titles to be determined once I start writing.  Ideas included below:
 #    - title: Christianity
 #      url:
