@@ -32,6 +32,10 @@ entries:
 #      url: /planningzabbix.html
 #      output: web, pdf
 
+    - title: Zabbix Datasheet
+      url: /zabbixdatasheet.html
+      output: web, pdf
+
     - title: Installing MySQL Database
       url: /zabbixdb.html
       output: web, pdf
