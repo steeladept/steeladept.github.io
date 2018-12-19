@@ -1,7 +1,7 @@
 ---
 title: Markdown Syntax Guide
 keywords: markdown
-last_updated: Oct 18, 2018
+last_updated: Dec 18, 2018
 tags: [getting_started, markdown]
 summary: "Basic Markdown Syntax"
 sidebar: markdown_sidebar
