@@ -128,3 +128,22 @@ End a line with two or more spaces:
 
     Roses are red,  
     Violets are blue.
+
+## Tables ##
+
+>Note: This is an extended markdown syntax not supported in all Markdown implementations.
+
+Write the Markup as shown to get the results that follow:
+
+```text
+   header 1 | header 2 | Header 3 
+  ----------|----------|----------
+  Content Size Doesn't | Matter.  It just | matters where the
+  pipe is and | where the | line breaks are.
+```
+
+
+ header 1 | header 2 | Header 3 
+----------|----------|----------
+Content Size Doesn't | Matter.  It just | matters where the
+pipe is and | where the | line breaks are.
