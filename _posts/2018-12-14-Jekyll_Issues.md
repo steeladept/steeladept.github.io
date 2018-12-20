@@ -1,5 +1,5 @@
 ---
-title:  "Jekyll Issues- Issue 2: Special Characters"
+title:  "Jekyll Issues - Issue 2: Special Characters"
 published: true
 permalink: jekyllissues2.html
 summary: "When originally setting up Jekyll, I ran into many issues.  These issues broke my will and I looked around at other solutions.  Hugo, in particular, was one I looked at because others I knew, in particular [@arielsanchezmor](https://twitter.com/arielsanchezmor) used Hugo successfully to create his site and keep things rolling. After learning how he worked with Hugo, I started looking at themes for ANY static site generator that fit my needs the way I want it to work.  I happened on the Jekyll Document theme and ended up coming back to Jekyll.  This blog post is a list of issues I overcame and/or realized after returning to Jekyll and learning the real ins and outs of how I use it."
