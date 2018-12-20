@@ -1,6 +1,6 @@
 ---
-title:  "IT Tooling"
-published: true
+title:  "IT Tooling - Part 1"
+published: false
 permalink: ittools1.html
 summary: "Like any profession, IT has its fair share of tools. Below is a list of my favorites in various categories and why."
 tags: [news, tools]
@@ -31,6 +31,14 @@ Making each connection simple is just one feature of this software that I love. 
 RDM is really a full connection management tool to manage connections over a variety of protocols in a variety of configurations, complete with account information, and secure solutions to meet a variety of requirements.  It is because of this broad and deep capability built into a single tool to make an administrators life easier that I have chosen this as my favorite password manager.  Unfortunately, it does not run on Linux, even in WINE for the most recent versions.  I look forward to .Net Core growing up and RDM being refactored to work cross platform with any Linux operating system.  For Linux users, the project I have been recommended to use is [Remmina](https://remmina.org), which is similar, but far less comprehensive.  In my experience, the repositories break a lot as well, so there may be some work involved with using this project.
 
 Favorite:  [Devolutions Remote Desktop Manager](https://remotedesktopmanager.com)
+
+As you can imagine, this subject can get quite lengthy, quite quick.  This ends part 1 of this series of posts.  Look for [part 2](./ittools2.html) coming soon where we will review several more categories of tools. In the mean time, if you have a favorite OS or favorite Password Manager, leave a comment below about what you like about it and educate us on the merits of your tools of choice.
+
+---
+
+
+Save below for part 2.
+
 
 ## Favorite Business Applications ##
 
