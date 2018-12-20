@@ -1,8 +1,8 @@
 ---
-title: "Getting started pages"
-tagName: getting_started
+title: "GitHub pages"
+tagName: github
 search: exclude
-permalink: tag_getting_started.html
+permalink: tag_github.html
 sidebar: home_sidebar
 folder: tags
 ---

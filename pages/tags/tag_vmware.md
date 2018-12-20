@@ -1,11 +1,12 @@
 ---
-title: "Getting started pages"
-tagName: getting_started
+title: "VMware pages"
+tagName: vmware
 search: exclude
-permalink: tag_getting_started.html
+permalink: tag_vmware.html
 sidebar: home_sidebar
 folder: tags
 ---
+
 {% include taglogic.html %}
 
 {% include links.html %}

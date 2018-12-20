@@ -1,8 +1,8 @@
 ---
-title: "Getting started pages"
-tagName: getting_started
+title: "Zabbix pages"
+tagName: zabbix
 search: exclude
-permalink: tag_getting_started.html
+permalink: tag_zabbix.html
 sidebar: home_sidebar
 folder: tags
 ---

@@ -1,8 +1,8 @@
 ---
-title: "Getting started pages"
-tagName: getting_started
+title: "Linux pages"
+tagName: linux
 search: exclude
-permalink: tag_getting_started.html
+permalink: tag_linux.html
 sidebar: home_sidebar
 folder: tags
 ---

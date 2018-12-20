@@ -1,8 +1,8 @@
 ---
-title: "Getting started pages"
-tagName: getting_started
+title: "Markdown pages"
+tagName: markdown
 search: exclude
-permalink: tag_getting_started.html
+permalink: tag_markdown.html
 sidebar: home_sidebar
 folder: tags
 ---
