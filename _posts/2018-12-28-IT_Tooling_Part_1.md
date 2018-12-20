@@ -1,5 +1,5 @@
 ---
-title:  "IT Tooling - Part 1"
+title:  "IT Tooling"
 published: true
 permalink: ittools1.html
 summary: "Like any profession, IT has its fair share of tools. Below is a list of my favorites in various categories and why."
