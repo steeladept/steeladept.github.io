@@ -1,6 +1,6 @@
 ---
 title:  "Enterprise Tooling - Security"
-published: false
+published: true
 permalink: enttoolssec.html
 summary: "One thing about IT tools is it isn't only about your personal tools.  IT is first, and foremost, about enabling others to do their jobs safely, efficiently, and effectively.  To do that, requires a host of Enterprise Tools to ensure security, data integrity, and a functional environment for the business applications to function in.  This is another tooling post that reviews some of the Enterprise solutions I have used/implemented and why I liked them."
 tags: [news, tools]
