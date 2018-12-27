@@ -25,7 +25,7 @@ The other gift I received is 2 SSD hard drives to replace my aged and maybe goin
 
 ![alt text:  Samsung SSD][ssd]
 
-The best gift of all, however, was a day where my kids actually didn't fight each other at all. If you have kids who are near the same age, you already know what I mean. I have two girls, pre-teens, so you can just imagine what the fights are like. Having them acting like sisters who actually like each other was the biggest blessing and gift they could give me.  And to be honest, I don't think they even realize they did so.
+Finally, from my wife's parents, we got a weekend getaway at one of the area indoor water parks called Splash Lagoon. Not sure if we have specific dates planned already, that is my wife's department (she loves to plan things!); but we will definitely put that to good use sometime this year. The best gift of all, however, was a day where my kids actually didn't fight each other at all. If you have kids who are near the same age, you already know what I mean. I have two girls, pre-teens, so you can just imagine what the fights are like. Having them acting like sisters who actually like each other was the biggest blessing and gift they could give me.  And to be honest, I don't think they even realize they did so.
 
 ---
 [salogo]:  images/SteeladeptFF-01.png "Steeladept Logo"
