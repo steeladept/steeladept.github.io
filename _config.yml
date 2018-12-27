@@ -100,6 +100,16 @@ defaults:
   -
     scope:
       path: ""
+      type: "pages/life_events"
+    values:
+      layout: "page"
+      comments: true
+      search: true
+      sidebar: life_sidebar
+      topnav: topnav
+  -
+    scope:
+      path: ""
       type: "pages/linux"
     values:
       layout: "page"
@@ -126,6 +136,16 @@ defaults:
       comments: true
       search: true
       sidebar: powershell_sidebar
+      topnav: topnav
+  -
+    scope:
+      path: ""
+      type: "pages/procrastinators_anonymous"
+    values:
+      layout: "page"
+      comments: true
+      search: true
+      sidebar: life_sidebar
       topnav: topnav
   -
     scope:
@@ -174,6 +194,7 @@ sidebars:
 - home_sidebar
 - git_sidebar
 - jekyll_sidebar
+- life_sidebar
 - linux_sidebar
 - markdown_sidebar
 - powershell_sidebar

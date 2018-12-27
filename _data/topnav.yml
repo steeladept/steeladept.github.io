@@ -30,11 +30,10 @@ topnav_dropdowns:
 #          url: 
     - title: Living Life
       folderitems:
-        - title: Section Under Construction!
-          url: 
-
-#       - title:
-#         url:
+        - title: Events
+          url: /life_events
+        - title: Motivation
+          url: /procrastinators_anonymous
 
     - title: Jekyll Help
       folderitems:

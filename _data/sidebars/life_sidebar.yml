@@ -1,0 +1,31 @@
+# This is your sidebar TOC. The sidebar code loops through sections here and provides the appropriate formatting.
+
+entries:
+- title: sidebar
+  product: Living Life
+  version: 
+  folders:
+
+  - title: Life Events
+    output: pdf
+    type: frontmatter
+    folderitems:
+    - title: Christmas 2018
+      url: /christmas2018.html
+      output: pdf
+      type: frontmatter
+    - title:
+      url: 
+      output: pdf
+      type: frontmatter
+
+  - title: Procrastinators Anonymous
+    output: web, pdf
+    folderitems:
+
+    - title: Words of Encouragement
+      url: /woe.html
+      output: web, pdf
+      type: homepage
+
+    
