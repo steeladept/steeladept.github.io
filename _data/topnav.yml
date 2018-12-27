@@ -31,7 +31,7 @@ topnav_dropdowns:
     - title: Living Life
       folderitems:
         - title: Events
-          url: /life_events
+          url: /christmas2018
         - title: Motivation
           url: /woe
 
