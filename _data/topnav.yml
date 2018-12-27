@@ -33,7 +33,7 @@ topnav_dropdowns:
         - title: Events
           url: /life_events
         - title: Motivation
-          url: /procrastinators_anonymous
+          url: /woe
 
     - title: Jekyll Help
       folderitems:
