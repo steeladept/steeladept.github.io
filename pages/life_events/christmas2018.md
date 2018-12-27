@@ -3,7 +3,7 @@ title: "Christmas 2018"
 keywords: christmas
 last_updated: Dec 27, 2018
 tags: [christmas, holiday]
-summary: ""
+summary: "Christmas is a time of joy and giving.  It is also a time of receiving and showing off what you got.  Here is my show-off page :)"
 sidebar: life_sidebar
 permalink: christmas2018.html
 folder: life_events
