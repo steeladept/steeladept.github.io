@@ -7,12 +7,11 @@ entries:
   folders:
 
   - title: Life Events
-    output: pdf
-    type: frontmatter
+    output: web, pdf
     folderitems:
     - title: Christmas 2018
       url: /christmas2018.html
-      output: pdf
+      output: web, pdf
       type: frontmatter
     - title:
       url: 
@@ -22,7 +21,6 @@ entries:
   - title: Procrastinators Anonymous
     output: web, pdf
     folderitems:
-
     - title: Words of Encouragement
       url: /woe.html
       output: web, pdf
