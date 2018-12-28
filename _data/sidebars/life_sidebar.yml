@@ -9,6 +9,10 @@ entries:
   - title: Life Events
     output: web, pdf
     folderitems:
+    - title: A day in life ...
+      url: /life.html
+      output: web, pdf
+      type: homepage
     - title: Christmas 2018
       url: /christmas2018.html
       output: web, pdf

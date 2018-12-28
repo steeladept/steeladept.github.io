@@ -1,5 +1,5 @@
 ---
-title: "A day in the life ..."
+title: "A day in life ..."
 keywords: life
 last_updated: Dec 27, 2018
 tags: [life, encouragement]
