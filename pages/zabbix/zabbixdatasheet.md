@@ -3,7 +3,7 @@ title: Zabbix Datasheet
 keywords: zabbix
 last_updated: Dec 19, 2018
 tags: [getting_started, zabbix]
-summary: "This standard datasheet is a table of all the pertinent details related to a default Zabbix install I used during the creation of this documentation.  It should provide a good start on what is needed, even if you vary from the standard (in Production, I varied much of this!)"
+summary: "This standard datasheet is a table of all the pertinent details related to a default Zabbix install I used during the creation of this documentation.It should provide a good start on what is needed, even if you vary from the standard (in Production, I varied much of this!)"
 sidebar: zabbix_sidebar
 permalink: zabbixdatasheet.html
 folder: zabbix

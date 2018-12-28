@@ -10,15 +10,15 @@ folder: zabbix
 
 ## Installing CENTOS 7 ##
 
->The assumption is you already have CENTOS 7 installed, connected to the internet and network location(s), and updated to current patch level.  In addition, this document assumes MySQL is already installed and configured for the PROXY.  If not, use the directions to install [MySQL for Zabbix](./Zabbix4MySQLInstall.md)
+>The assumption is you already have CENTOS 7 installed, connected to the internet and network location(s), and updated to current patch level.In addition, this document assumes MySQL is already installed and configured for the PROXY.If not, use the directions to install [MySQL for Zabbix](./Zabbix4MySQLInstall.md)
 
-This document will take the user from an intial CENTOS 7 setup to a full Zabbix installation.  All steps should be included and anything missing should be added or relayed to the author for addition.
+This document will take the user from an intial CENTOS 7 setup to a full Zabbix installation.All steps should be included and anything missing should be added or relayed to the author for addition.
 
 ## Before Beginning ##
 
-Make sure the database the proxy will be using is already installed.  See my [MySQL Install Guide](./Zabbix4MySQLInstall.md) for instructions on installing MySQL for Zabbix Proxies.
+Make sure the database the proxy will be using is already installed.See my [MySQL Install Guide](./Zabbix4MySQLInstall.md) for instructions on installing MySQL for Zabbix Proxies.
 
-NOTE:  This typically will be on the same servers, but can be separated if necessary.  Either way, you need to ensure it exist first.
+NOTE:  This typically will be on the same servers, but can be separated if necessary.Either way, you need to ensure it exist first.
 
 ## Installing Zabbix Prerequisites ##
 

@@ -12,12 +12,12 @@ folder: zabbix
 
 >The assumption is you already have CENTOS 7 installed, connected to the internet and network location(s), and updated to current patch level.
 
-This document will take the user from an initial CENTOS 7 setup to a full Zabbix installation.  All steps should be included and anything missing should be added or relayed to the author for addition.
+This document will take the user from an initial CENTOS 7 setup to a full Zabbix installation.All steps should be included and anything missing should be added or relayed to the author for addition.
 
 ## Before Beginning ##
 
-Make sure the Database Zabbix will be using is already installed.  See my [MySQL Install Guide](./Zabbix4MySQLInstall.md) for instructions on installing MySQL for Zabbix.
-Further, make sure the application server is already installed.  See my [Zabbix Application Server Installation Guide](./Zabbix4AppServerInstall.md) for instructions on setting up the Application Server.
+Make sure the Database Zabbix will be using is already installed.See my [MySQL Install Guide](./Zabbix4MySQLInstall.md) for instructions on installing MySQL for Zabbix.
+Further, make sure the application server is already installed.See my [Zabbix Application Server Installation Guide](./Zabbix4AppServerInstall.md) for instructions on setting up the Application Server.
 
 NOTE:  These may be on the same or separate servers, but you need to ensure they exist first in either case.
 
@@ -42,7 +42,7 @@ $yum-config-manager --enable rhel-7-server-optional-rpms
 $yum -y install zabbix-web-mysql zabbix-agent
 ```
 
->NOTE: If the Remi-PHP packages are already installed from an earlier install, you may run into a dependency issue with the remi-php72 packages.  To resolve, type **yum remove php**, and then install the web server.  After it is complete, verify PHP 7.2+ is still being used by typing **php -v**
+>NOTE: If the Remi-PHP packages are already installed from an earlier install, you may run into a dependency issue with the remi-php72 packages.To resolve, type **yum remove php**, and then install the web server.After it is complete, verify PHP 7.2+ is still being used by typing **php -v**
 
 - Install PHP repository
 
@@ -101,7 +101,7 @@ $vim /etc/httpd/conf.d/ssl.conf
 
   Make it match the ssl locations and configurations just created:
 
-> Note:  If Apache is only being used for Zabbix, you can just edit the default VirtualHost.  Otherwise, create one specifically for Zabbix.
+> Note:  If Apache is only being used for Zabbix, you can just edit the default VirtualHost.Otherwise, create one specifically for Zabbix.
 
 ```vim
 DocumentRoot "/usr/share/zabbix"
@@ -194,7 +194,7 @@ https://<DNS_Web_Address>/zabbix
 
 ## Next Steps ##
 
-- Install the agent.  See [Agent Configuration Guide](./Zabbix4AgentInstall.md) for details.
+- Install the agent.See [Agent Configuration Guide](./Zabbix4AgentInstall.md) for details.
 
 - Configure Proxy Servers, if used.
   - Start with the [MySQL Install Guide](./Zabbix4MySQLInstall.md) for instructions on installing MySQL for Zabbix Proxy Servers.

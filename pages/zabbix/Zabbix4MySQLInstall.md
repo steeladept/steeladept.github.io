@@ -12,13 +12,13 @@ folder: zabbix
 
 >The assumption is you already have CENTOS 7 installed, connected to the internet and network location(s), and updated to current patch level.
 
-This document will take the user from an initial CENTOS 7 setup to a full Zabbix installation.  All steps should be included and anything missing should be added or relayed to the author for addition.
+This document will take the user from an initial CENTOS 7 setup to a full Zabbix installation.All steps should be included and anything missing should be added or relayed to the author for addition.
 
 ## Add additional resources (if necessary) ##
 
 ### CPU/MEMORY ###
 
-- These should be added in the VMware Console before starting the machine, if possible.  Hot-add is possible, but could lead to stability issues and force a reboot.
+- These should be added in the VMware Console before starting the machine, if possible.Hot-add is possible, but could lead to stability issues and force a reboot.
 
 **Zabbix Server**:
 > Configure to a minimum of 2 CPU and 24GB RAM
@@ -77,7 +77,7 @@ $firewall-cmd --list-all
 
 - Setup MySQL Database
 
-  *NOTE: On CENTOS7, MySQL generates a temporary database root password written to the log in /var/log/mysqld.log after initial startup.  As shown in the steps below, get this password before running the mysql_secure_connection script or it will throw an error*
+  *NOTE: On CENTOS7, MySQL generates a temporary database root password written to the log in /var/log/mysqld.log after initial startup.As shown in the steps below, get this password before running the mysql_secure_connection script or it will throw an error*
 
   *NOTE: I am using mysql root user password of MySQLrootpass\*1 (in test only)*
   
@@ -141,7 +141,7 @@ event_scheduler=ON
 > NOTE: The database for Server and Proxy are slightly different - use the correct zcat command based on the machine role the database will be used for!  Also, if multiple databases will exist on same server, each must use a unique name.
 
 ```bash
-#NOTE: Because you didn't read the note above - The database for Server and Proxy are slightly different - use the correct zcat command based on the machine role.  ALSO NOTE this does take a while in both cases.  Please be patient and wait for the command to finish!
+#NOTE: Because you didn't read the note above - The database for Server and Proxy are slightly different - use the correct zcat command based on the machine role.ALSO NOTE this does take a while in both cases.Please be patient and wait for the command to finish!
 
 #Server Schema
 $zcat /usr/share/doc/zabbix-server-mysql*/create.sql.gz | mysql -uzabbix -p zabbix
@@ -152,7 +152,7 @@ $zcat /usr/share/doc/zabbix-proxy-mysql*/schema.sql.gz | mysql -uzabbix -p zabbi
 $systemctl enable mysqld
 ```
 
-Do not forget to install the agent.  See [Agent Configuration Guide](./Zabbix4AgentInstall.md) for details.  
+Do not forget to install the agent.See [Agent Configuration Guide](./Zabbix4AgentInstall.md) for details.
 
 >Note that you may need to come back and add or adjust this after you install Application Server and front end Web Server so you can verify functionality
 
@@ -162,9 +162,9 @@ Do not forget to install the agent.  See [Agent Configuration Guide](./Zabbix4Ag
 
 *Shout-out here to [ingus.vilnis](https://www.zabbix.com/forum/member/207631-ingus-vilnis), Senior Member on the Zabbix Forums who single-handedly provided all the information below based on the [YAMP wiki page](http://zabbix.org/wiki/Docs/howto/mysql_partitioning)*
 
-Anytime you expect to hit somewhere above 500 NVPS (New Values Per Second) you should consider using partitioning instead of the built in housekeeper functions.  In so doing, you sacrifice some historical granularity in favor of performance, so consider how important your historical data is before using this method of performance enhancements.  In particular, with the housekeeper running, you can individually control how long you keep data for each item.  With partitioning, however, you control how long you keep each item grouping (as defined by the table that is partitioned), instead of each individual item.
+Anytime you expect to hit somewhere above 500 NVPS (New Values Per Second) you should consider using partitioning instead of the built in housekeeper functions.In so doing, you sacrifice some historical granularity in favor of performance, so consider how important your historical data is before using this method of performance enhancements.In particular, with the housekeeper running, you can individually control how long you keep data for each item.With partitioning, however, you control how long you keep each item grouping (as defined by the table that is partitioned), instead of each individual item.
 
-For my installations, I am using partitioning as there are no historical requirements defined for specific items and I am intending this installation to be capable of ~1500 NVPS or more.  There are a couple different approaches and several different methods available for partitioning.  I used the one highlighted and recommended in the [zabbix.org/wiki](http://zabbix.org/wiki/Docs/howto/mysql_partitioning) which is to partition by range (date ranges to be exact) using a perl script.
+For my installations, I am using partitioning as there are no historical requirements defined for specific items and I am intending this installation to be capable of ~1500 NVPS or more.There are a couple different approaches and several different methods available for partitioning.I used the one highlighted and recommended in the [zabbix.org/wiki](http://zabbix.org/wiki/Docs/howto/mysql_partitioning) which is to partition by range (date ranges to be exact) using a perl script.
 
 - Step one, verify there is no historical data that needs partitioned off
 
@@ -179,7 +179,7 @@ For my installations, I am using partitioning as there are no historical require
 #1 row in set (0.00 sec)
 ```
 
-If it is not NULL, you can either truncate all tables or partition for each date between the history and today.  To alter each table, do the Alter step for each table incrementing dates from the UNIXTIME to today.  If you want to just truncate all data, do the following:
+If it is not NULL, you can either truncate all tables or partition for each date between the history and today.To alter each table, do the Alter step for each table incrementing dates from the UNIXTIME to today.If you want to just truncate all data, do the following:
 
 ```sql
 mysql>TRUNCATE TABLE `history`;
@@ -445,6 +445,6 @@ MAILTO=root
 
 ## Next Steps ##
 
-Now the Database is prepared.  See my [Zabbix Application Server Installation Guide](./Zabbix4AppServerInstall.md) for instructions on setting up the Application Server.
+Now the Database is prepared.See my [Zabbix Application Server Installation Guide](./Zabbix4AppServerInstall.md) for instructions on setting up the Application Server.
 
 ---

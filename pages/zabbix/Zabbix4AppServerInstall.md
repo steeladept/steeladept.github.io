@@ -12,11 +12,11 @@ folder: zabbix
 
 >The assumption is you already have CENTOS 7 installed, connected to the internet and network location(s), and updated to current patch level.
 
-This document will take the user from an initial CENTOS 7 setup to a full Zabbix installation.  All steps should be included and anything missing should be added or relayed to the author for addition.
+This document will take the user from an initial CENTOS 7 setup to a full Zabbix installation.All steps should be included and anything missing should be added or relayed to the author for addition.
 
 ## Before Beginning ##
 
-Make sure the database Zabbix will be using is already installed.  See my [MySQL Install Guide](./Zabbix4MySQLInstall.md) for instructions on installing MySQL for Zabbix.
+Make sure the database Zabbix will be using is already installed.See my [MySQL Install Guide](./Zabbix4MySQLInstall.md) for instructions on installing MySQL for Zabbix.
 
 NOTE:  This may be on the same or separate servers, but you need to ensure it exist first in either case.
 
@@ -136,7 +136,7 @@ $vim /etc/sysconfig/selinux
 
 2. Second issue yet to be defined.
 
-Do not forget to install the agent.  See [Agent Configuration Guide](./Zabbix4AgentInstall.md) for details.  
+Do not forget to install the agent.See [Agent Configuration Guide](./Zabbix4AgentInstall.md) for details.
 
 >Note that you may need to come back and add or adjust this after you install the front end web server so you can verify functionality
 
@@ -144,6 +144,6 @@ Do not forget to install the agent.  See [Agent Configuration Guide](./Zabbix4Ag
 
 ## Next Steps ##
 
-Now the Database is prepared.  See my [Zabbix Frontend Installation Guide](./Zabbix4FrontEndInstall.md) for instructions on setting up the web server interface.
+Now the Database is prepared.See my [Zabbix Frontend Installation Guide](./Zabbix4FrontEndInstall.md) for instructions on setting up the web server interface.
 
 ---

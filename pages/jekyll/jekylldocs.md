@@ -4,7 +4,7 @@ keywords: theme homepage
 tags: [jekyll, theme]
 sidebar: mydoc_sidebar
 permalink: jekylldocs.html
-summary: These brief instructions will help you get started quickly with the theme. The other topics in this help provide additional information and detail about working with other aspects of this theme and Jekyll. Reproduced here from the original author's source and intended for reference only.  See the official [Github repo](https://github.com/tomjoht/documentation-theme-jekyll) for updated information.
+summary: These brief instructions will help you get started quickly with the theme. The other topics in this help provide additional information and detail about working with other aspects of this theme and Jekyll. Reproduced here from the original author's source and intended for reference only.See the official [Github repo](https://github.com/tomjoht/documentation-theme-jekyll) for updated information.
 folder: jekyll
 ---
 
@@ -356,7 +356,7 @@ Note that the topnav has two sections: `topnav` and `topnav_dropdowns`. The topn
 
 ## Generating PDF
 
-If you want to generate PDF, you'll need a license for [Prince XML](http://www.princexml.com/). You will also need to [install Prince](http://www.princexml.com/doc/installing/).  You can generate PDFs by product (but not for every product on the site combined together into one massive PDF). Prince will work even without a license, but it will imprint a small Prince image on the first page, and you're supposed to buy the license to use it.
+If you want to generate PDF, you'll need a license for [Prince XML](http://www.princexml.com/). You will also need to [install Prince](http://www.princexml.com/doc/installing/).You can generate PDFs by product (but not for every product on the site combined together into one massive PDF). Prince will work even without a license, but it will imprint a small Prince image on the first page, and you're supposed to buy the license to use it.
 
 If you're on Windows, install [Git Bash client](https://git-for-windows.github.io/) rather than using the default Windows command prompt.
 
@@ -377,25 +377,25 @@ See [Posts][mydoc_posts] for more information.
 This theme uses [kramdown markdown](http://kramdown.gettalong.org/). kramdown is similar to Github-flavored Markdown, except that when you have text that intercepts list items, the spacing of the intercepting text must align with the spacing of the first character after the space of a numbered list item. Basically, with your list item numbering, use two spaces after the dot in the number, like this:
 
 ```
-1.  First item
-2.  Second item
-3.  Third item
+1.First item
+2.Second item
+3.Third item
 ```
 
 When you want to insert paragraphs, notes, code snippets, or other matter in between the list items, use four spaces to indent. The four spaces will line up with the first letter of the list item (the <b>F</b>irst or <b>S</b>econd or <b>T</b>hird).
 
 ```
-1.  First item
+1.First item
 
     ```
     alert("hello");
     ```
 
-2.  Second item
+2.Second item
 
     Some pig!
 
-3.  Third item
+3.Third item
 ```
 
 See the topics under "Formatting" in the sidebar for more information.
