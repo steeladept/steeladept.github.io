@@ -8,11 +8,11 @@ tags: [newyears]
 
 ![alt text:  Happy New Year, 2019][hny2019]
 
-Once again we have started a new year. 2018 is now officially 100% history, and what a year it was. The good, and bad, can be looked on as nostalgic, or if appropriate - painful, reminders of our life. Such memories are worth preserving, if for no other reason than to compare to the new year to show how much progress (or congress) we have made in the new year compared to last year.
+Once again we have started a new year. 2018 is now officially 100% history, and what a year it was. The good, and bad, can be looked on as nostalgic, or if appropriate - painful, reminders of our life. Such memories are worth preserving, if for no other reason than to compare to the new year to show how much progress (or congress)* we have made in the new year compared to last year.
 
-*Yes, - I know, the opposite of progress in this context is regress, not congress; but I find that old joke just far too appropriate.*
+  *\* - Yes, I know the opposite of progress in this context is regress, not congress; but I find that old joke just far too appropriate.*
 
-For myself, the first thing I want to remember of 2018 is that I started this site. There are other things, but since I am writing here, it is the most obvious thing to mark and the first item to remember.
+For myself, the first thing I want to remember of 2018 is that I started this site. There are other things, but since I am writing here, it is the most obvious thing to mark and the first item to remember. Odd thing about this blog - as a new blogger I am finding it difficult to categorize where I want to place my posts. Do I want them in the blog feed or the project feed?  I can't do both with my current theme, so do I want to change themes, or choose my placement? Ultimately, I think I am always going to be trading one problem for another, but for now, I am placing this particular post in the blog-roll so it has a greater chance of distribution. Eventually I might migrate it to the Living Life section, but for now, this is where I placed it :).
 
 For better or worse, 2018 was a year where there was no deaths or serious injuries in the extended family, but many health issues have arisen or become far more severe, several of which are permanent. Such contemplation begs the question which is worse, deteriorating life quality, or end of life? The obvious answer, like with so many things, is it depends (though I generally am staunchly on the side of end of life being really bad, overall). How much and in what way did the quality deteriorate? What are you no longer capable of doing? Certainly it changes your life, but is the change bad, or just different? There are so many variables, and so many different ways to look at it, that you just need to be reminded to actually look at these changes and see if you can figure it out.
 
@@ -30,4 +30,4 @@ Overall, I don't recommend you being a contractor all the time, or even most of 
 
 ---
 
-[hny2019]:  ../images/ "Happy New Year"
+[hny2019]:  images/HNYBanner.png "Happy New Year"
