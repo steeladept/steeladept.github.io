@@ -119,5 +119,5 @@ The Zabbix agent is a little different because it installs on every server that 
 
 [Zabbix Agent Installation Guide](.\Zabbix4AgentInstall.md)
 
-[ZabbixLayout]: images/ZabbixLayout.jpg "Zabbix Layout"
-[MySQL]: images/powered-by-mysql-125x64.png "MySQL Logo"
+[ZabbixLayout]: images/Zabbix/ZabbixLayout.jpg "Zabbix Layout"
+[MySQL]: images/Zabbix/powered-by-mysql-125x64.png "MySQL Logo"

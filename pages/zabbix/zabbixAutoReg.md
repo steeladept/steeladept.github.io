@@ -43,5 +43,6 @@ There are other options for you to discover and configure if appropriate for you
 
 ---
 
-[ZabbixAutoReg]: images/autoregister.png "Zabbix Auto-Registration"
-[AutoRegOpsComplete]: images/aropscomp.png "Auto-Registration Operations Completed"
+[ZabbixAutoReg]: images/Zabbix/autoregister.png "Zabbix Auto-Registration"
+[AutoRegAddHost]: images/Zabbix/araddhosts.png "Auto-Registration Add Host Groups"
+[AutoRegOpsComplete]: images/Zabbix/aropscomp.png "Auto-Registration Operations Completed"

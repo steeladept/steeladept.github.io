@@ -29,4 +29,4 @@ Finally, from my wife's parents, we got a weekend getaway at one of the area ind
 
 ---
 [salogo]:  images/SteeladeptFF-01.png "Steeladept Logo"
-[ssd]:  images/Samsung-EVO-256GB-SSD.jpg "Samsung SSD"
+[ssd]:  images/MiscImages/Samsung-EVO-256GB-SSD.jpg "Samsung SSD"
