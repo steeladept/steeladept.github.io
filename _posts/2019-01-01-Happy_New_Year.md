@@ -30,4 +30,4 @@ Overall, I don't recommend you being a contractor all the time, or even most of 
 
 ---
 
-[hny2019]:  images/HNYBanner.png "Happy New Year"
+[hny2019]:  images/Banners/HNYBanner.png "Happy New Year"
