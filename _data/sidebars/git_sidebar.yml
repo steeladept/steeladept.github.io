@@ -37,7 +37,7 @@ entries:
     folderitems:
 
     - title: Getting started with GitHub Pages
-      url: /GithubPages.html
+      url: /GitHubPages.html
       output: web, pdf
       type: homepage
 
