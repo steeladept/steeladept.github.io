@@ -25,7 +25,7 @@ NOTE:  This typically will be on the same servers, but can be separated if neces
 - Install the Zabbix Repository
 
 ```bash
-$rpm -ivh https://repo.zabbix.com/zabbix/4.0/7/x86_64/zabbix-release-4.0-1.el7.noarch.rpm
+$rpm -ivh https://repo.zabbix.com/zabbix/4.0/rhel/7/x86_64/zabbix-release-4.0-1.el7.noarch.rpm
 ```
 
 - Install Zabbix Packages
