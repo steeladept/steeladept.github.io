@@ -1,35 +1,19 @@
 ---
 title: Installing Zabbix Agent
 keywords: zabbix agent
-last_updated: Oct 29, 2018
+last_updated: Jan 9, 2019
 tags: [getting_started, zabbix, zabbix agent]
 sidebar: zabbix_sidebar
 permalink: zabbixagent.html
 folder: zabbix
 ---
 
-The Zabbix Agent is a component that will see a LOT of variations based on your personal configuration. The below examples are set to correspond to what I needed in my environment and should be accepted as examples, and not mandatory.In particular, setting of Hostname and/or HostMetadata will be very dependent on how you configure your
-application server via the frontend.In my case, I set it up for autoregistration assuming the machines are mostly windows (I just set a default Linux bucket rather than differentiating, though that might be added later), and that the host name is properly configured on the machine (both windows and linux).If either of these settings to not match expectations, the server will not autoregister as expected and will hence look strange in the zabbix application.Don't worry, there are ways to fix that too, both by adjusting it in the agent, and/or options in the application to identify it properly.
-
->NOTE, THIS STUFF ISN'T WORKING YET*********
-
-Before installing the agent, if you will be securing it via certificates, be sure to secure the certificates you will use.
-
-If this is completely internal and self-signed certificates are sufficient for your purposes, use the following procedure:
-
-- Create the Self-Signed Cert (INTERNAL USE ONLY)
-
-```bash
-$mkdir -p /etc/zabbix/private_agent
-$chmod 700 /etc/zabbix/private_agent
-$openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout /etc/zabbix/private_agent/agent-selfsigned.key -out /etc/zabbix/agent-selfsigned.crt
-```
-
->NOTE, ABOVE ISN'T WORKING YET*********
+The Zabbix Agent is a component that will see a LOT of variations based on your personal configuration. The below examples are set to correspond to what I needed in my environment and should be accepted as examples, and not mandatory. In particular, setting of Hostname and/or HostMetadata will be very dependent on how you configure your
+application server via the frontend. In my case, I set it up for auto-registration assuming the machines are mostly windows (I just set a default Linux bucket rather than differentiating, though that might be added later), and that the host name is properly configured on the machine (both windows and linux). If either of these settings to not match expectations, the server will not auto-register as expected and will hence look strange in the zabbix application. Don't worry, there are ways to fix that too, both by adjusting it in the agent, and/or options in the application to identify it properly.
 
 ## Windows Install ##
 
-Since Zabbix is a Linux system, it isn't as easy to install the service for windows as it is for Linux.However, it is easy to download the precompiled agent and use that with the configuration file.
+Since Zabbix is a Linux system, it isn't as easy to install the service for windows as it is for Linux. However, it is easy to download the precompiled agent and use that with the configuration file.
 
 - Download the Zabbix Precompiled Windows Agent
 
@@ -50,9 +34,11 @@ Server=<ServerIP Addresses> # NOTE:  DNS NAMES DO NOT SEEM TO WORK, AT LEAST IN 
 #       List of comma delimited Zabbix servers and Zabbix proxies for active checks.
 ServerActive=<ServerIP Addresses> # NOTE:  RECOMMEND ONLY ONE SERVER IDENTIFIED TO PREVENT CONFUSION
 Hostname=Zabbix Server #  <--REMOVE OR COMMENT OUT THIS LINE - IT WILL PULL FROM HOSTNAME
-HostMetadata=<Appropriate Metadata Tag as defined in Frontend>
+HostMetadata=<Appropriate Metadata Tag as defined in Auto-Registration Actions>
 Include=/etc/zabbix/zabbix_agentd.d/*.conf
 ```
+
+- Start/Verify Zabbix Agent Service is running
 
 - Configure Security for Zabbix Agent
 
@@ -64,7 +50,7 @@ On Zabbix Servers, many of these steps may be bypassed, since they are already d
 
 ### RedHat\CENTOS 7.x ###
 
-Other RedHat versions are similar.See the Zabbix documentation to determine the correct repo to install.
+Other RedHat versions are similar. See the Zabbix documentation to determine the correct repo to install.
 
 - Install the Zabbix Repository
 
@@ -95,8 +81,15 @@ Server=<ServerIP Addresses> # NOTE:  DNS NAMES DO NOT SEEM TO WORK, AT LEAST IN 
 #       List of comma delimited Zabbix servers and Zabbix proxies for active checks.
 ServerActive=<ServerIP Addresses> # NOTE:  RECOMMEND ONLY ONE SERVER IDENTIFIED TO PREVENT CONFUSION
 Hostname=Zabbix Server #  <--REMOVE OR COMMENT OUT THIS LINE - IT WILL PULL FROM HOSTNAME
-HostMetadata=Linux
+HostMetadata=<Appropriate Metadata Tag as defined in Auto-Registration Actions>
 Include=/etc/zabbix/zabbix_agentd.d/*.conf
+```
+
+- Start Zabbix Agent
+
+```bash
+$systemctl start zabbix-agent
+$systemctl enable zabbix-agent
 ```
 
 - Configure Security for Zabbix Agent
@@ -140,6 +133,13 @@ ServerActive=<ServerIP Addresses> # NOTE:  RECOMMEND ONLY ONE SERVER IDENTIFIED 
 Hostname=Zabbix Server #  <--REMOVE OR COMMENT OUT THIS LINE - IT WILL PULL FROM HOSTNAME
 HostMetadata=Linux
 Include=/etc/zabbix/zabbix_agentd.d/*.conf
+```
+
+- Start Zabbix Agent
+
+```bash
+$systemctl start zabbix-agent
+$systemctl enable zabbix-agent
 ```
 
 - Configure Security for Zabbix Agent

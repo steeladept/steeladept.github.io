@@ -14,12 +14,6 @@ folder: zabbix
 
 This document will take the user from an intial CENTOS 7 setup to a full Zabbix installation. All steps should be included and anything missing should be added or relayed to the author for addition.
 
-## Before Beginning ##
-
->Make sure the database the proxy will be using is already installed. See my [MySQL Install Guide](./Zabbix4MySQLInstall.md) for instructions on installing MySQL for Zabbix Proxies.
-
-NOTE:  This typically will be on the same servers, but can be separated if necessary. Either way, you need to ensure it exist first.
-
 ## Installing Zabbix Prerequisites ##
 
 - Install the Zabbix Repository
@@ -48,6 +42,12 @@ $yum-config-manager --enable remi-php72
 $yum -y update
 $yum -y install php
 ```
+
+## Database installation ##
+
+Make sure the database the proxy will be using is already installed. See my [MySQL Install Guide](./Zabbix4MySQLInstall.md) for instructions on installing MySQL for Zabbix Proxies.
+
+NOTE:  This typically will be on the same servers, but can be separated if necessary. Either way, you need to ensure it exist first.
 
 ## Configuring PHP for Zabbix ##
 
@@ -80,10 +80,15 @@ $vim /etc/zabbix/zabbix_proxy.conf
 - Edit the following lines with the appropriate entries:
 
 ```vim
+Server=<Application Server IP Address>
+ServerPort=10051
+EnableRemoteCommands=1
+LogRemoteCommands=1
 DBHost=localhost
 DBName=zabbix
 DBUser=zabbix
 DBPassword=<database password>
+ProxyOfflineBuffer=72
 ```
 
 - Start the Zabbix Proxy
@@ -101,6 +106,30 @@ $systemctl status zabbix-proxy
 
 ## Add Proxy to Server ##
 
+Zabbix Proxy servers are nothing more than another server being monitored by Zabbix until you tell the application that it IS a Proxy. To do that, you log into the application server then follow these steps:
+
+- Press `Create proxy` button on the Administration > Proxies screen
+
+![alt text: Create Proxy screen][Create_Proxy]
+
+- In the next screen, enter the proxy name you are expecting to see in the application on the Proxy name screen
+
+- Set your Proxy mode (I set mine to Active to allow for Active Monitoring)
+
+- Finally, set the Proxy address. This can be in IP Address format or DNS name format (or both separated by comma's for each defined address)
+
+![alt text: New Proxy Server Setup screen][New_Proxy]
+
+- Lastly, if desired, set a description of this particular proxy server. This description does not show anywhere else I have found in Zabbix, but may be useful for keeping specific notes about this particular proxy.
+
+## Verify Proxy Setup ##
+
+Once all this is done, the Proxy Server should be ready to provide proxy services to the Zabbix Application Server. To verify installation:
+
+1. Choose a server that is intended to be monitored and edit the Agent > Server section to point to the new proxy server (you can also change the Agent ActiveServer section, if appropriate, to point to this new Proxy Server to verify Active Proxy status). 
+2. Restart the agent.
+3. Within a few minutes you should see the server being proxied by the new server. Alternatively, you should be able to view the server agent logs and/or the proxy server logs to see the connection or any connection errors that are occurring.
+
 ---
 
 ## Next Steps ##
@@ -108,3 +137,6 @@ $systemctl status zabbix-proxy
 - Configure Zabbix and/or add machines for monitoring as described in the [Zabbix Administration Guide](./ZabbixAdministration.md).
 
 ---
+
+[Create_Proxy]: images/Zabbix/CreateProxy.png "Create Proxy screen"
+[New_Proxy]: images/Zabbix/NewProxySetup.png "New Proxy Server Setup screen"
