@@ -27,5 +27,5 @@ I am not sure I want any more ministry posts, but there will, despite my desires
 
 ---
 
-[blogreg]:  ../images/Banners/BLOGGING.png "BLOGGING Banner"
+[blogreg]:  ../images/Banners/Bricks.png "BLOGGING Banner"
 [pup]:  ../images/MiscImages/pupgotthis.jfif "You got this Pup Picture"
