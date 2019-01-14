@@ -2,20 +2,6 @@ body {
     font-size:15px;
 }
 
-.center-image
-{
-    margin-left: auto;
-    margin-right: auto;
-    display: block;
-}
-
-.right-image
-{
-    margin-left: auto;
-    margin-right: 0;
-    display: block;
-}
-
 .bs-callout {
     padding: 20px;
     margin: 20px 0;

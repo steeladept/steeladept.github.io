@@ -5,6 +5,20 @@ body {
     color: #d0d0d0;
 }
 
+.center-image
+{
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+.right-image
+{
+    margin-left: auto;
+    margin-right: 0;
+    display: block;
+}
+
 table {
     color: #808080;
 }
