@@ -1,0 +1,29 @@
+---
+title:  "Communication - The key differentiator"
+published: true
+permalink: comm_difference.html
+summary: "Effective communication is one key, perhaps even the key, to success in any project involving many people. It will frequently define if the project is accepted or rejected, successful or not. In business, it may even be the differentiator between profiting or closing."
+tags: [life]
+---
+
+![alt text:   Communication Banner][commdiff]
+
+It's the small things that make the difference. The devil is in the details. The road to Hell is paved one sin at a time. Everyone hears these, or similar statements, yet so few realize the full impact of that. Too many people do not communicate because "it is just details" or "don't sweat the small stuff" or even "I don't have time to get into the weeds on this, I will tell you later" (and of course, later never comes); yet it is in those very details that can so often make or break a project. At very least, it is often the cause of unexpected and unnecessary rework and expense.
+
+That is exactly what happened to me this week. I have been working on a project for the better part of 6 months now, and asking for network information all along the way. The company is structured such that Networking and Server teams rarely talk, and typically only through static communication channels such as tickets, change requests, that type of thing. (Note, this is not specific to the networking and server teams; this is a very siloed company with MANY departments structured only to talk through proscribed channels.) For some teams, this kind of disciplined communication may work; however between the network and server teams communication is so crucial to the success of either team that they typically are physically colocated just to facilitate that communication. In this company, that is not the case.
+
+Sun Tzu works on strategy focused on many aspects unrelated to battle; and one of those aspects is on gaining insight (or knowledge, if you prefer), prior to any engagement. Learning as much as you can on the subject at hand, as well as those related to it both directly and indirectly. However just knowing this does not help a General, nor does it help his army, unless the key players know what they are doing and how or why. Often, if you communicate WHY something is being done, the correct choice of HOW is far more obvious. This requires effective communication both internally and externally. However, sometimes even this is not enough, and it also helps to communicate the landscape or environment to be expected as well - essentially communicating the circumstances that can directly affect the best choice of HOW.
+
+In my example above, we had a need to setup servers for monitoring. I, as the soldier, knew from this what needed done, and why. However, what was not communicated was the environment we were working in. As a result, my servers (the troops) were out of place, and it took far more effort to effect the change required. I had to have several firewall ports opened (unnecessarily as it turned out) and jump through a lot of hoops to make server to server communication possible. These ports were to open communications between datacenters, and there were at least 4 datacenters that needed communication for this monitoring to occur as desired.
+
+I learned recently, however, that there was another network segment set aside just for management and other similar servers that needed access across the entire ecosystem to easily talk to all datacenters. This segment even had high-speed interconnects for replication and bulk data transfers, however they were considering dropping these interconnects due to non-use. This environmental data would have proven very useful at the outset of the project, but due to limited communication between the teams, a lot of time was wasted trying to get communication between servers working, especially between datacenters themselves - a problem that was already solved but never communicated.
+
+In battle, one of the worst possible scenarios is when a lieutenant misunderstands a command (or ignores it), and their group is caught out of position. This leads to wasted resources, ineffective maneuvering, and quite often friendly fire. The result is significantly higher casualties and unnecessary use of additional assets, at best; and loss of the battle at worst. In business, it is no different, where that lack of understanding leads to wasted resources, ineffective engagement, and quite often failed projects. The result is significantly higher costs and unnecessary use of additional resources, at best; and loss of customers as worst.
+
+What this tells us is that communication is not only a key skill, but can be a key differentiator between businesses. If you are able to communicate your ideas, plans, and goals effectively, efficiently, and timely; your people will be able to execute efficiently on those targets. Often, business is not won by how great an idea is (though it never hurts), rather it is won or lost by how well it is executed.
+
+Timely, effective, and efficient communication would have been key to resolving my issues; and can (and should) be a constant goal moving forward. While there are many who talk a lot and say little, there are just as many who speak little, yet say a lot. Educating yourself on how to do the latter will propel your career in any job or situation, but is especially important in management positions. In writing this story, I came across this article on [efficient communication](https://www.progressivewomensleadership.com/efficient-communication-say-more-with-less/). It taught me a quick trick to being a more efficient communicator. It will take some time to become natural, but if it works, you will likely start seeing shorter posts.
+
+---
+
+[commdiff]:  images/Banners/communicationBanner.png "Communications Banner"
