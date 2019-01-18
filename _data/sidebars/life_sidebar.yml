@@ -19,7 +19,7 @@ entries:
       type: frontmatter
     - title:
       url: 
-      output: pdf
+      output: web, pdf
       type: frontmatter
 
   - title: Procrastinators Anonymous
@@ -29,5 +29,9 @@ entries:
       url: /woe.html
       output: web, pdf
       type: homepage
+    - title: Blogging Regularly
+      url: /blogregularly.html
+      output: web, pdf
+      type: frontmatter
 
     
