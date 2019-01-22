@@ -1,7 +1,7 @@
 ---
 title: Installing Zabbix Proxy Server on CENTOS 7
 keywords: zabbix proxy centos
-last_updated: Jan 8, 2019
+last_updated: Jan 22, 2019
 tags: [getting_started, zabbix, zabbix proxy]
 sidebar: zabbix_sidebar
 permalink: zabbixproxy.html
@@ -89,6 +89,14 @@ DBName=zabbix
 DBUser=zabbix
 DBPassword=<database password>
 ProxyOfflineBuffer=72
+```
+
+- Open Firewall Ports
+
+```bash
+$firewall-cmd --permanent --add-port=10050/tcp
+$firewall-cmd --permanent --add-port=10051/tcp
+$firewall-cmd --reload
 ```
 
 - Start the Zabbix Proxy

@@ -1,7 +1,7 @@
 ---
 title: Installing Zabbix Application Server on CENTOS 7
 keywords: zabbix server centos
-last_updated: Oct 29, 2018
+last_updated: Jan 22, 2019
 tags: [getting_started, zabbix, zabbix server]
 sidebar: zabbix_sidebar
 permalink: zabbixserver.html
@@ -96,6 +96,15 @@ DBHost=<hostIPAddr>
 DBName=zabbix
 DBUser=zabbix
 DBPassword=<database password>
+```
+
+- Open Firewall Ports
+
+```bash
+$firewall-cmd --permanent --add-port=10050/tcp
+$firewall-cmd --permanent --add-port=10051/tcp
+$firewall-cmd --permanent --add-port=3306/tcp # only for external database connections
+$firewall-cmd --reload
 ```
 
 - Start the Zabbix server

@@ -1,7 +1,7 @@
 ---
 title: Installing Zabbix Agent
 keywords: zabbix agent
-last_updated: Jan 9, 2019
+last_updated: Jan 22, 2019
 tags: [getting_started, zabbix, zabbix agent]
 sidebar: zabbix_sidebar
 permalink: zabbixagent.html
@@ -37,6 +37,8 @@ Hostname=Zabbix Server #  <--REMOVE OR COMMENT OUT THIS LINE - IT WILL PULL FROM
 HostMetadata=<Appropriate Metadata Tag as defined in Auto-Registration Actions>
 Include=/etc/zabbix/zabbix_agentd.d/*.conf
 ```
+
+- Open Firewall Ports 10050 and 10051 in the Windows Firewall (if enabled)
 
 - Start/Verify Zabbix Agent Service is running
 
@@ -83,6 +85,14 @@ ServerActive=<ServerIP Addresses> # NOTE:  RECOMMEND ONLY ONE SERVER IDENTIFIED 
 Hostname=Zabbix Server #  <--REMOVE OR COMMENT OUT THIS LINE - IT WILL PULL FROM HOSTNAME
 HostMetadata=<Appropriate Metadata Tag as defined in Auto-Registration Actions>
 Include=/etc/zabbix/zabbix_agentd.d/*.conf
+```
+
+- Open Firewall Ports
+
+```bash
+$firewall-cmd --permanent --add-port=10050/tcp
+$firewall-cmd --permanent --add-port=10051/tcp
+$firewall-cmd --reload
 ```
 
 - Start Zabbix Agent
