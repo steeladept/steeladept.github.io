@@ -1,7 +1,7 @@
 ---
 title: Installing Zabbix Proxy Server on CENTOS 7
 keywords: zabbix proxy centos
-last_updated: Jan 22, 2019
+last_updated: Jan 23, 2019
 tags: [getting_started, zabbix, zabbix proxy]
 sidebar: zabbix_sidebar
 permalink: zabbixproxy.html
@@ -137,6 +137,25 @@ Once all this is done, the Proxy Server should be ready to provide proxy service
 1. Choose a server that is intended to be monitored and edit the Agent > Server section to point to the new proxy server (you can also change the Agent ActiveServer section, if appropriate, to point to this new Proxy Server to verify Active Proxy status). 
 2. Restart the agent.
 3. Within a few minutes you should see the server being proxied by the new server. Alternatively, you should be able to view the server agent logs and/or the proxy server logs to see the connection or any connection errors that are occurring.
+
+### Known Issues and Resolution ###
+
+The proxy and server are very similar. Issues found by the server apply to the proxy as well. One I ran into is
+
+1. Verify SELinux isn't causing the issue
+
+   - Update SELinux configurations
+
+   ```bash
+   #if connection denied permission errors are seen, try changing to permissive
+   $setenforce permissive
+
+   #if that works, troubleshoot source or change to permissive permanently
+   $vim /etc/sysconfig/selinux
+   ```
+
+2. Verify the server name matches the Host Name in the Application server.  The proxy will not be able to get ActiveServer rules if they are different.
+   to resolve, use the nmtui tool to rename the server, or change the configuration in the Application Server to match the actual proxy server hostname.
 
 ---
 

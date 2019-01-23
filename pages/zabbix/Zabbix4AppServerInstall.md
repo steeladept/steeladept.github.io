@@ -1,7 +1,7 @@
 ---
 title: Installing Zabbix Application Server on CENTOS 7
 keywords: zabbix server centos
-last_updated: Jan 22, 2019
+last_updated: Jan 23, 2019
 tags: [getting_started, zabbix, zabbix server]
 sidebar: zabbix_sidebar
 permalink: zabbixserver.html
@@ -124,26 +124,25 @@ $systemctl status zabbix-server
 
 1. It is common for SELinux to get in the way of connecting to remote services, and connecting to an external MySQL database, I kept running into this issue:
 
-  1166:20181028:033532.402 [Z3001] connection to database 'zabbix' failed: [2003] Can't connect to MySQL server on 'mysqlserver.com' (13)
-  1166:20181028:033532.402 database is down: reconnecting in 10 seconds
+   1166:20181028:033532.402 [Z3001] connection to database 'zabbix' failed: [2003] Can't connect to MySQL server on 'mysqlserver.com' (13)
+   1166:20181028:033532.402 database is down: reconnecting in 10 seconds
 
-To fix this issue, do the following:
+   To fix this issue, update SELinux configurations
 
-- Update SELinux configurations
+   ```bash
+   $cd /etc/zabbix
+   $setsebool -P httpd_can_connect_zabbix on
+   $setsebool -P httpd_can_network_connect_db on
 
-```bash
-$cd /etc/zabbix
-$setsebool -P httpd_can_connect_zabbix on
-$setsebool -P httpd_can_network_connect_db on
+   #if database connection errors are seen, try changing to permissive
+   $setenforce permissive
 
-#if database connection errors are seen, try changing to permissive
-$setenforce permissive
+   #if that works, troubleshoot source or change to permissive permanently
+   $vim /etc/sysconfig/selinux
+   ```
 
-#if that works, troubleshoot source or change to permissive permanently
-$vim /etc/sysconfig/selinux
-```
-
-2. Second issue yet to be defined.
+2. The Application server lives and dies by it's cache settings. Zabbix Server will shut itself down when the cache is overrun. Always monitor the cache and 
+   adjust as needed in the zabbix_server.conf file.
 
 Do not forget to install the agent.See [Agent Configuration Guide](./Zabbix4AgentInstall.md) for details.
 
