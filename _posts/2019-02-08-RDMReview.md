@@ -1,6 +1,6 @@
 ---
 title:  "Devolution's Remote Desktop Manager Review"
-published: false
+published: true
 permalink: rdm.html
 summary: "Remote Desktop Manager from Devolutions is one of my absolute favorite IT tools. Anyone who knows me, knows I talk about how it can help them, and anyone who doesn't know me, quickly finds out if they are doing IT tasks. To save time discussing it, and to help others with the value it provides, here is a breakdown of how I use it and why it is such a huge help."
 tags: [RDM, tools]
