@@ -6,8 +6,6 @@ summary: "Remote Desktop Manager from Devolutions is one of my absolute favorite
 tags: [RDM, tools]
 ---
 
-<a href="https://devolutions.net/ref/434933/rdm-home" rel="nofollow" target="_blank"><img src="https://webdevolutions.blob.core.windows.net/images/banners/affiliates/style1-home-300x250.jpg" style="text-align:center;"></a>
-
 Before I get too deep into this, I want to provide a disclaimer - I am a Devolutions Force member and, literally as of today's post, have begun taking part in their affiliate program.  In fact, the link at the bottom of this page is the first affiliate link I have ever provided. Please feel free to follow it to learn more about the many features of RDM (especially the ones I don't cover here).
 
 If it makes a difference, the reason I became a Force member is due to my heavy use of the tool and spreading the word - even before the Force membership and affiliate offers. For those who don't know, Devolutions Force is a free site where members can learn more about the tools Devolutions builds and have fun completing challenges for points which can eventually be redeemed for swag. If you want to join the Force, leave a comment below and I will get in touch. You don't need to go through me, but it is one of the challenges :)
