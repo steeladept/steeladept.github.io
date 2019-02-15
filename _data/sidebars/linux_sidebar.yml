@@ -29,6 +29,6 @@ entries:
       type: homepage
 
     - title: Troubleshooting Linux - Extending LVM Partitions
-      url: /lvmpartition.md
+      url: /lvmpartition.html
       output: web, pdf
 
