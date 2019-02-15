@@ -157,13 +157,13 @@ The proxy and server are very similar. Issues found by the server apply to the p
 2. Verify the server name matches the Host Name in the Application server.  The proxy will not be able to get ActiveServer rules if they are different.
    to resolve, use the nmtui tool to rename the server, or change the configuration in the Application Server to match the actual proxy server hostname.
 
-3. The initial sizing of the hard drive was not sufficient for MySQL in use (even if it wasn't storing significant data for Zabbix). To fix this, I had to extend the volume to     add sufficient space for the proxy to work as normal. Instructions on how to do this can be found [here](../linux/lvmpartition.html)
+3. The initial sizing of the hard drive was not sufficient for MySQL in use (even if it wasn't storing significant data for Zabbix). To fix this, I had to extend the volume to     add sufficient space for the proxy to work as normal. Instructions on how to do this can be found [here](./lvmpartition.html)
 
 ---
 
 ## Next Steps ##
 
-- Configure Zabbix and/or add machines for monitoring as described in the [Zabbix Administration Guide](./ZabbixAdministration.md).
+- Configure Zabbix and/or add machines for monitoring as described in the [Zabbix Administration Guide](./ZabbixAdministration.html).
 
 ---
 
