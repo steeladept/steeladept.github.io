@@ -42,7 +42,8 @@ fdisk /dev/sda
 Once in the subsystem, you can type m for help and to see all that fdisk allows you to do.  In our case, we are starting with the `n` command for a new partition.
 
 ```
-WARNING: DOS-compatible mode is deprecated. It's strongly recommended to                 switch off the mode (command 'c') and change display units to 
+WARNING: DOS-compatible mode is deprecated. It's strongly recommended to
+         switch off the mode (command 'c') and change display units to 
          sectors (command 'u').
 
 Command (m for help): n

@@ -31,4 +31,5 @@ entries:
     - title: Troubleshooting Linux - Extending LVM Partitions
       url: /lvmpartition.html
       output: web, pdf
+      type: frontmatter
 
