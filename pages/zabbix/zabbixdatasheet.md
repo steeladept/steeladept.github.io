@@ -1,7 +1,7 @@
 ---
 title: Zabbix Datasheet
 keywords: zabbix
-last_updated: Feb 14, 2019
+last_updated: Mar 11, 2019
 tags: [getting_started, zabbix]
 summary: "This standard datasheet is a table of all the pertinent details related to a default Zabbix install I used during the creation of this documentation.It should provide a good start on what is needed, even if you vary from the standard (in Production, I varied much of this!)."
 sidebar: zabbix_sidebar
@@ -32,7 +32,7 @@ Zabbix Database Server 4.0 (MySQL 8.0)| Active Agent:TCP/10050, Passive Agent:TC
 
 Server Sizing - CPU | Server Sizing - Memory | Server Sizing Disk Space
 --------------------|------------------------|------------------------
-2 vCPUs | 24 GB | 40GB - OS Drive, 250GB - Data Drive
+2 vCPUs | 24 GB | 250GB - OS Drive, 1TB - Data Drive
 
 ## Zabbix Front-End Server ##
 

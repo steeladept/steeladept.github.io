@@ -160,7 +160,7 @@ lvextend /dev/centos_mpls-sv-nasfs02/root /dev/sda3
 The last part is where we just tell the OS that we have more space on that logical volume.  We do this by issuing the `xfs_growfs` command.
 
 ```
-sfs_growfs /dev/centos_mpls-sv-nasfs02/root
+xfs_growfs /dev/centos_mpls-sv-nasfs02/root
 ```
 
 Now you are done.  You can verify it using `df -h` and noting the newly added size to the disk space is now recognized.

@@ -1,7 +1,7 @@
 ---
 title: Installing Zabbix Proxy Server on CENTOS 7
 keywords: zabbix proxy centos
-last_updated: Feb 15, 2019
+last_updated: Mar 1, 2019
 tags: [getting_started, zabbix, zabbix proxy]
 sidebar: zabbix_sidebar
 permalink: zabbixproxy.html
@@ -12,7 +12,7 @@ folder: zabbix
 
 >The assumption is you already have CENTOS 7 installed, connected to the internet and network location(s), and updated to current patch level. In addition, this document assumes MySQL is already installed and configured for the PROXY. If not, use the directions to install [MySQL for Zabbix](./Zabbix4MySQLInstall.md)
 
-This document will take the user from an intial CENTOS 7 setup to a full Zabbix installation. All steps should be included and anything missing should be added or relayed to the author for addition.
+This document will take the user from an initial CENTOS 7 setup to a full Zabbix installation. All steps should be included and anything missing should be added or relayed to the author for addition.
 
 ## Installing Zabbix Prerequisites ##
 
@@ -88,7 +88,14 @@ DBHost=localhost
 DBName=zabbix
 DBUser=zabbix
 DBPassword=<database password>
+ProxyLocalBuffer=0
 ProxyOfflineBuffer=72
+HeartbeatFrequency=60
+DataSenderFrequency=3
+StartPollers=25
+StartPollersUnreachable=5
+StartTrappers=25
+StartVMwareCollectors=30
 ```
 
 - Open Firewall Ports

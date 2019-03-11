@@ -1,7 +1,7 @@
 ---
 title: Installing MySQL 8.0 on CENTOS 7 for Zabbix
 keywords: zabbix database centos
-last_updated: Oct 29, 2018
+last_updated: March 7, 2019
 tags: [getting_started, zabbix, zabbix database]
 sidebar: zabbix_sidebar
 permalink: zabbixdb.html
@@ -126,6 +126,7 @@ $vim /etc/my.cnf
 skip_name_resolve
 default_authentication_plugin=mysql_native_password
 event_scheduler=ON
+expire_logs_days=7
 ```
 
 - Import Zabbix Schema
