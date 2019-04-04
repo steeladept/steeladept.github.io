@@ -103,6 +103,21 @@ $mysql_secure_installation
 
 NOTE: For a standalone SQL Server, install the Zabbix Repository, then zabbix-server-mysql and zabbix-agent only. No other packages are necessary for the database server.
 
+- Edit the MySQL Configuration file to change the way the passwords work (needed only for MySQL 8+ due to a change in how the password encryption is done)
+
+```bash
+$vim /etc/my.cnf
+
+# Change the default directory for the database data (if desired)
+
+
+# add the following lines to the config file (Can't do earlier or we can't run the secure_install script):
+skip_name_resolve
+default_authentication_plugin=mysql_native_password
+event_scheduler=ON
+expire_logs_days=7
+```
+
 - Add Zabbix User to database
 
   *NOTE: I am using a zabbix database password of Zabdbpass\*1 (in test only)*
@@ -117,24 +132,14 @@ mysql> grant all privileges on zabbix.* to 'zabbix'@'<serverID>' with grant opti
 mysql> quit;
 ```
 
-- Edit the MySQL Configuration file to change the way the passwords work (needed only for MySQL 8+ due to a change in how the password encryption is done)
-
-```bash
-$vim /etc/my.cnf
-
-# add the following lines to the config file (Can't do earlier or we can't run the secure_install script):
-skip_name_resolve
-default_authentication_plugin=mysql_native_password
-event_scheduler=ON
-expire_logs_days=7
-```
-
 - Import Zabbix Schema
 
 > NOTE: The database for Server and Proxy are slightly different - use the correct zcat command based on the machine role the database will be used for!  Also, if multiple databases will exist on same server, each must use a unique name.
 
 ```bash
-#NOTE: Because you didn't read the note above - The database for Server and Proxy are slightly different - use the correct zcat command based on the machine role.ALSO NOTE this does take a while in both cases.Please be patient and wait for the command to finish!
+#NOTE: Because you didn't read the note above - The database for Server and Proxy are slightly different -
+#      use the correct zcat command based on the machine role.
+#ALSO NOTE: This does take a while in both cases. Please be patient and wait for the command to finish!
 
 #Server Schema
 $zcat /usr/share/doc/zabbix-server-mysql*/create.sql.gz | mysql -uzabbix -p zabbix

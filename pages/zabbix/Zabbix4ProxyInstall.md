@@ -95,7 +95,7 @@ DataSenderFrequency=3
 StartPollers=25
 StartPollersUnreachable=5
 StartTrappers=25
-StartVMwareCollectors=30
+StartVMwareCollectors=3
 ```
 
 - Open Firewall Ports
@@ -141,7 +141,7 @@ Zabbix Proxy servers are nothing more than another server being monitored by Zab
 
 Once all this is done, the Proxy Server should be ready to provide proxy services to the Zabbix Application Server. To verify installation:
 
-1. Choose a server that is intended to be monitored and edit the Agent > Server section to point to the new proxy server (you can also change the Agent ActiveServer section, if appropriate, to point to this new Proxy Server to verify Active Proxy status). 
+1. Choose a server that is intended to be monitored and edit the Agent > Server section to point to the new proxy server (you can also change the Agent ActiveServer section, if appropriate, to point to this new Proxy Server to verify Active Proxy status).
 2. Restart the agent.
 3. Within a few minutes you should see the server being proxied by the new server. Alternatively, you should be able to view the server agent logs and/or the proxy server logs to see the connection or any connection errors that are occurring.
 
