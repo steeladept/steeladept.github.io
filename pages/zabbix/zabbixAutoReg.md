@@ -33,7 +33,7 @@ In the Operations details, change the Operation type to Add to host group, then 
 
 ![alt text: Auto-Registration Add Host Groups][AutoRegAddHost]
 
-Next, add another operation and change the type to Link to Template.Here, you want to apply all appropriate templates for this type of machine.
+Next, add another operation and change the type to Link to Template. Here, you want to apply all appropriate templates for this type of machine.
 
 Finally, if you want Zabbix to discover running services and add them to monitoring automatically, add a third operation for *Set host inventory mode* and set it to Automatic.
 
