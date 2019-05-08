@@ -27,7 +27,7 @@ I am quickly learning that knowing Zabbix means knowing the underlying database 
 2) Select the top 10 values of a table:
 
 ```sql
-    SELECT * FROM 'proxy_history' LIMIT 10;
+    SELECT * FROM proxy_history LIMIT 10;
 ```
 
 3) Converting Unixtime to date:
@@ -43,7 +43,7 @@ Zabbix uses UNIXTIME in their 'clock' field of most tables that time is relevant
 4) Truncate a table:
 
 ```sql
-    TRUNCATE TABLE 'proxy_history';
+    TRUNCATE TABLE proxy_history;
 ```
 
 NOTE:  This frequently does not work due to foreign key dependencies.  
@@ -52,7 +52,7 @@ NOTE:  This frequently does not work due to foreign key dependencies.
 
 ```sql
     DELETE ALL
-    FROM 'proxy_history'
+    FROM proxy_history
     WHERE 'clock'>1557153218;
 ```
 
