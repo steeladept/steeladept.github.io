@@ -1,7 +1,7 @@
 ---
 title: Installing Zabbix Proxy Server on CENTOS 7
 keywords: zabbix proxy centos
-last_updated: Mar 1, 2019
+last_updated: June 4, 2019
 tags: [getting_started, zabbix, zabbix proxy]
 sidebar: zabbix_sidebar
 permalink: zabbixproxy.html

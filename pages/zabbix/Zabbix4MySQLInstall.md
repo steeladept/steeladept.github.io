@@ -1,7 +1,7 @@
 ---
 title: Installing MySQL 8.0 on CENTOS 7 for Zabbix
 keywords: zabbix database centos
-last_updated: March 7, 2019
+last_updated: June 4, 2019
 tags: [getting_started, zabbix, zabbix database]
 sidebar: zabbix_sidebar
 permalink: zabbixdb.html
