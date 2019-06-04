@@ -119,6 +119,10 @@ $systemctl enable zabbix-proxy
 $systemctl status zabbix-proxy
 ```
 
+- Setup Logrotate to prevent logs getting too large
+
+Go to `vim /etc/logrotate.d/mysql` and verify the log location is correct, then uncomment as appropriate.
+
 ## Add Proxy to Server ##
 
 Zabbix Proxy servers are nothing more than another server being monitored by Zabbix until you tell the application that it IS a Proxy. To do that, you log into the application server then follow these steps:
@@ -165,6 +169,8 @@ The proxy and server are very similar. Issues found by the server apply to the p
    to resolve, use the nmtui tool to rename the server, or change the configuration in the Application Server to match the actual proxy server hostname.
 
 3. The initial sizing of the hard drive was not sufficient for MySQL in use (even if it wasn't storing significant data for Zabbix). To fix this, I had to extend the volume to     add sufficient space for the proxy to work as normal. Instructions on how to do this can be found [here](./lvmpartition.html)
+
+4. binlog.####### is filling disk. To resolve, removed older binlog files. May be worth creating a logrotate entry for it, but must find out the ramifications of that.
 
 ---
 

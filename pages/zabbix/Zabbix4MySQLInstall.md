@@ -150,6 +150,10 @@ $zcat /usr/share/doc/zabbix-proxy-mysql*/schema.sql.gz | mysql -uzabbix -p zabbi
 $systemctl enable mysqld
 ```
 
+- Setup Logrotate to prevent logs getting too large
+
+Go to `vim /etc/logrotate.d/mysql` and verify the log location is correct, then uncomment as appropriate.
+
 Do not forget to install the agent. See [Agent Configuration Guide](./Zabbix4AgentInstall.md) for details.
 
 >Note that you may need to come back and add or adjust this after you install Application Server and front end Web Server so you can verify functionality
