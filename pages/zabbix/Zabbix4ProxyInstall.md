@@ -170,7 +170,7 @@ The proxy and server are very similar. Issues found by the server apply to the p
 
 3. The initial sizing of the hard drive was not sufficient for MySQL in use (even if it wasn't storing significant data for Zabbix). To fix this, I had to extend the volume to     add sufficient space for the proxy to work as normal. Instructions on how to do this can be found [here](./lvmpartition.html)
 
-4. binlog.####### is filling disk. To resolve, removed older binlog files. May be worth creating a logrotate entry for it, but must find out the ramifications of that.
+4. /var/lib/mysql/binlog.####### is filling disk. To resolve, removed older binlog files. May be worth creating a logrotate entry for it, but must find out the ramifications of that.
 
 ---
 
