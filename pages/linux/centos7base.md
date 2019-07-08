@@ -22,7 +22,8 @@ Whenever I go into a new environment, it seems they always have a good image for
 	a. **WGET** (yum -y install wget)
 	b. **EPEL** Repository (yum -y install epel-release)
 	c. **ACK** (yum -y install ack)
-	d. **Policy Core Utilities** (yum -y install policycoreutils-python)
+	d. **VIM** (yum -y install vim)
+	e. **Policy Core Utilities** (yum -y install policycoreutils-python)
 5. Configure VMware Tools (if needed)
 	a. Add the VMware repository and prerequisites (yum -y install open-vm-tools)
     b. reboot server
@@ -64,12 +65,12 @@ Clean-up all packages and network rules [footnote 1](1)
 2. package-cleanup –oldkernels –count=1
 3. stop rsyslog and auditd services
 4. logrotate -f /etc/logrotate.conf
-5. rm -f /var/log/*-???????? /var/log/*.gz 
-6. rm -f /var/log/dmesg.old 
-7. rm -rf /var/log/anaconda 
-8. cat /dev/null > /var/log/audit/audit.log 
-9. cat /dev/null > /var/log/wtmp 
-10. cat /dev/null > /var/log/lastlog 
+5. rm -f /var/log/*-???????? /var/log/*.gz
+6. rm -f /var/log/dmesg.old
+7. rm -rf /var/log/anaconda
+8. cat /dev/null > /var/log/audit/audit.log
+9. cat /dev/null > /var/log/wtmp
+10. cat /dev/null > /var/log/lastlog
 11. cat /dev/null > /var/log/grubby
 12. rm -f /etc/udev/rules.d/70*
 13. sed –i”.bak” ‘/UUID/d’ /etc/sysconfig/network-scripts/<active NIC>

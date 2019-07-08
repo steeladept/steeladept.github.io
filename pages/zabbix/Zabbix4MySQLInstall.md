@@ -57,7 +57,7 @@ $rpm -ivh mysql80-community-release-el7-1.noarch.rpm
 $yum -y install mysql-community-server
 ```
 
-- (Zabbix Application Server Only!) Mount the new hard drive to /var/lib/mysql and configuration in /etc/fstab to make it permanent
+- (Zabbix Application Database Server Only! *not proxy databases*) Mount the new hard drive to /var/lib/mysql and configuration in /etc/fstab to make it permanent
 
 ```bash
 $mount /dev/sdb /var/lib/mysql
@@ -209,13 +209,13 @@ mysql>GRANT SELECT, DELETE, DROP, ALTER ON zabbix.* TO 'zbx_part'@'localhost' wi
 - Alter each table so it is ready for partitioning
 
 ```sql
-mysql>ALTER TABLE `history` PARTITION BY RANGE ( clock) (PARTITION p2018_10_24 VALUES LESS THAN (UNIX_TIMESTAMP("2018-10-25 00:00:00") div 1) ENGINE = InnoDB);
-mysql>ALTER TABLE `history_log` PARTITION BY RANGE (clock) (PARTITION p2018_10_24 VALUES LESS THAN (UNIX_TIMESTAMP("2018-10-25 00:00:00") div 1) ENGINE = InnoDB);
-mysql>ALTER TABLE `history_str` PARTITION BY RANGE (clock) (PARTITION p2018_10_24 VALUES LESS THAN (UNIX_TIMESTAMP("2018-10-25 00:00:00") div 1) ENGINE = InnoDB);
-mysql>ALTER TABLE `history_text` PARTITION BY RANGE (clock) (PARTITION p2018_10_24 VALUES LESS THAN (UNIX_TIMESTAMP("2018-10-25 00:00:00") div 1) ENGINE = InnoDB);
-mysql>ALTER TABLE `history_uint` PARTITION BY RANGE (clock) (PARTITION p2018_10_24 VALUES LESS THAN (UNIX_TIMESTAMP("2018-10-25 00:00:00") div 1) ENGINE = InnoDB);
-mysql>ALTER TABLE `trends_uint` PARTITION BY RANGE ( clock) (PARTITION p2018_10 VALUES LESS THAN (UNIX_TIMESTAMP("2018-11-01 00:00:00") div 1) ENGINE = InnoDB);
-mysql>ALTER TABLE `trends` PARTITION BY RANGE ( clock) (PARTITION p2018_10 VALUES LESS THAN (UNIX_TIMESTAMP("2018-11-01 00:00:00") div 1) ENGINE = InnoDB);
+mysql>ALTER TABLE `history` PARTITION BY RANGE ( clock) (PARTITION p2019_06_06 VALUES LESS THAN (UNIX_TIMESTAMP("2019-06-07 00:00:00") div 1) ENGINE = InnoDB);
+mysql>ALTER TABLE `history_log` PARTITION BY RANGE (clock) (PARTITION p2019_06_06 VALUES LESS THAN (UNIX_TIMESTAMP("2019-06-07 00:00:00") div 1) ENGINE = InnoDB);
+mysql>ALTER TABLE `history_str` PARTITION BY RANGE (clock) (PARTITION p2019_06_06 VALUES LESS THAN (UNIX_TIMESTAMP("2019-06-07 00:00:00") div 1) ENGINE = InnoDB);
+mysql>ALTER TABLE `history_text` PARTITION BY RANGE (clock) (PARTITION p2019_06_06 VALUES LESS THAN (UNIX_TIMESTAMP("2019-06-07 00:00:00") div 1) ENGINE = InnoDB);
+mysql>ALTER TABLE `history_uint` PARTITION BY RANGE (clock) (PARTITION p2019_06_06 VALUES LESS THAN (UNIX_TIMESTAMP("2019-06-07 00:00:00") div 1) ENGINE = InnoDB);
+mysql>ALTER TABLE `trends_uint` PARTITION BY RANGE ( clock) (PARTITION p2019_06 VALUES LESS THAN (UNIX_TIMESTAMP("2019-07-01 00:00:00") div 1) ENGINE = InnoDB);
+mysql>ALTER TABLE `trends` PARTITION BY RANGE ( clock) (PARTITION p2019_06 VALUES LESS THAN (UNIX_TIMESTAMP("2019-07-01 00:00:00") div 1) ENGINE = InnoDB);
 mysql>quit
 ```
 
