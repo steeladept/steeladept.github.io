@@ -141,7 +141,7 @@ $systemctl status zabbix-server
    $vim /etc/sysconfig/selinux
    ```
 
-2. The Application server lives and dies by it's cache settings. Zabbix Server will shut itself down when the cache is overrun. Always monitor the cache and 
+2. The Application server lives and dies by it's cache settings. Zabbix Server will shut itself down when the cache is overrun. Always monitor the cache and
    adjust as needed in the zabbix_server.conf file.
 
 Do not forget to install the agent.See [Agent Configuration Guide](./Zabbix4AgentInstall.md) for details.
