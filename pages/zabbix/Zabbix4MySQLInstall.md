@@ -122,7 +122,7 @@ expire_logs_days=7
 
   *NOTE: I am using a zabbix database password of Zabdbpass\*1 (in test only)*
   
-Note that '\<serverID>' is the host name of the server that will connect
+Note that '\<serverID>' is the host name of the server that will connect.  For user accounts, set it equal to '%' to allow it to be accessed from any location.
 ```sql
 $mysql -uroot -p
 password
