@@ -25,8 +25,8 @@ entries:
     - title: Markdown
       url: /markdown
       output: web
-    - title: Powershell
-      url: /powershell
+    - title: Scripting
+      url: /scripting
       output: web
     - title: VMware
       url: /vmware

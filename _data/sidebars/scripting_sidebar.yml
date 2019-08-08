@@ -2,7 +2,7 @@
 
 entries:
 - title: sidebar
-  product: Powershell Documentation
+  product: Scripting Documentation
   version: 
   folders:
 
@@ -19,7 +19,7 @@ entries:
       output: pdf
       type: frontmatter
 
-  - title: Overview
+  - title: Powershell
     output: web, pdf
     folderitems:
 
@@ -40,7 +40,7 @@ entries:
       url: 
       output: web, pdf
 
-  - title: Scripts
+  - title: Powershell Scripts
     output: web, pdf
     folderitems:
 
@@ -53,5 +53,34 @@ entries:
       url: 
       output: web, pdf
 
+  - title: Python
+    output: web, pdf
+    folderitems:
+
+    - title: Getting Started
+      url: /python.html
+      output: web, pdf
+      type: homepage
+
+    - title: Python Constants
+      url: 
+      output: web, pdf
+
+    - title: Python <Topic>
+      url: 
+      output: web, pdf
+
+  - title: Python Scripts
+    output: web, pdf
+    folderitems:
+
+    - title: Base Template
+      url: /pybasetemplate.html
+      output: web, pdf
+      type: homepage
+
+    - title: <script name>
+      url: 
+      output: web, pdf
 
 

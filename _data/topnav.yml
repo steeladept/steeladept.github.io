@@ -20,8 +20,8 @@ topnav_dropdowns:
           url: /linux
         - title: Markdown
           url: /markdown
-        - title: Powershell
-          url: /powershell
+        - title: Scripting
+          url: /scripting
         - title: VMware
           url: /vmware
         - title: Zabbix
