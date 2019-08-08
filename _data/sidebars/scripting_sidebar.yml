@@ -3,6 +3,7 @@
 entries:
 - title: sidebar
   product: Scripting Documentation
+  url: /scripting.html
   version: 
   folders:
 
@@ -19,10 +20,9 @@ entries:
       output: pdf
       type: frontmatter
 
-  - title: Scripting
-    url: /scripting.html
-    output: web, pdf
-    folderitems:
+# - title: Scripting
+#   output: web, pdf
+#    folderitems:
 
 #    - title: Getting Started
 #      url: /scripting.html
