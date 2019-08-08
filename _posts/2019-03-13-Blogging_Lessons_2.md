@@ -3,7 +3,7 @@ title:  "Learning to Blog - The Flip side."
 published: true
 permalink: learnblogging2.html
 summary: "In complete contrast to my previous post on blogging, there is some value in the infamous 'Wall of Text'."
-tags: [getting_started, jekyll, troubleshooting]
+tags: [getting_started, troubleshooting]
 ---
 
 ![alt text:  Learn Banner][learn]
