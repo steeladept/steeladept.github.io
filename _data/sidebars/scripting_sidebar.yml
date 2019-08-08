@@ -19,6 +19,16 @@ entries:
       output: pdf
       type: frontmatter
 
+  - title: Scripting
+    url: /scripting.html
+    output: web, pdf
+    folderitems:
+
+#    - title: Getting Started
+#      url: /scripting.html
+#      output: web, pdf
+#      type: homepage
+
   - title: Powershell
     output: web, pdf
     folderitems:
