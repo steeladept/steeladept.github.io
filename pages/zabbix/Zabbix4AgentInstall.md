@@ -1,7 +1,7 @@
 ---
 title: Installing Zabbix Agent
 keywords: zabbix agent
-last_updated: Jan 22, 2019
+last_updated: Aug 12, 2019
 tags: [getting_started, zabbix, zabbix agent]
 sidebar: zabbix_sidebar
 permalink: zabbixagent.html
@@ -19,32 +19,37 @@ Since Zabbix is a Linux system, it isn't as easy to install the service for wind
 
 - Configure the conf file for core settings
 
-```text
+```bash
+# Edit c:\zabbix\zabbix_agentd.conf file in an Elevated Notepad session (or equivalent):
+
 # Edit the following lines to match the required settings listed below:
-LogFile=C:\Zabbix\logs\zabbix_agentd.log
-#At a minimum, edit the following lines to point to the appropriate proxy and/or server
 PidFile=/var/run/zabbix/zabbix_agentd.pid
 LogFile=/var/log/zabbix/zabbix_agentd.log
 LogFileSize=0
 EnableRemoteCommands=1
 LogRemoteCommands=1
-#       List of comma delimited IP addresses, optionally in CIDR notation of Zabbix servers and Zabbix proxies.
-#       Incoming connections will be accepted only from the hosts listed here.
-Server=<ServerIP Addresses> # NOTE:  DNS NAMES DO NOT SEEM TO WORK, AT LEAST IN OUR ENVIRONMENT.MAY BE DNS RELATED, OR A ZABBIX ISSUE - DID NOT TRY TO DETERMINE
-#       List of comma delimited Zabbix servers and Zabbix proxies for active checks.
-ServerActive=<ServerIP Addresses> # NOTE:  RECOMMEND ONLY ONE SERVER IDENTIFIED TO PREVENT CONFUSION
-Hostname=Zabbix Server #  <--REMOVE OR COMMENT OUT THIS LINE - IT WILL PULL FROM HOSTNAME
-HostMetadata=<Appropriate Metadata Tag as defined in Auto-Registration Actions>
+Server=<ServerIP Address(es)>
+ServerActive=<ServerIP Address of Proxy to use.> # NOTE:  If no proxy is used, set to zabbix server
+Hostname=Zabbix Server #  <--REMOVE OR COMMENT OUT THIS LINE - IT WILL PULL FROM THE HOSTNAME
+HostMetadata=<Appropriate Metadata Tag as defined in Auto-Registration Actions - See Metadata Configuration Settings below>
 Include=/etc/zabbix/zabbix_agentd.d/*.conf
 ```
 
 - Open Firewall Ports 10050 and 10051 in the Windows Firewall (if enabled)
 
+```text
+netsh.exe advfirewall firewall add rule name=”Zabbix Monitoring" dir=in action=allow protocol=TCP localport=10050-10051
+netsh.exe advfirewall firewall add rule name=”Zabbix Monitoring" dir=out action=allow protocol=TCP localport=10050-10051
+```
+
 - Start/Verify Zabbix Agent Service is running
 
-- Configure Security for Zabbix Agent
+```bash
+# NOTE that the path may vary based on the version of Zabbix Agent used, and where you place it
 
-**TBD**
+c:\Zabbix\bin\win\zabbix_agentd.exe -c c:\Zabbix\zabbix_agentd.conf -i
+c:\Zabbix\bin\win\zabbix_agentd.exe -s
+```
 
 ## Linux Install ##
 
@@ -77,13 +82,10 @@ LogFile=/var/log/zabbix/zabbix_agentd.log
 LogFileSize=0
 EnableRemoteCommands=1
 LogRemoteCommands=1
-#       List of comma delimited IP addresses, optionally in CIDR notation of Zabbix servers and Zabbix proxies.
-#       Incoming connections will be accepted only from the hosts listed here.
-Server=<ServerIP Addresses> # NOTE:  DNS NAMES DO NOT SEEM TO WORK, AT LEAST IN OUR ENVIRONMENT.MAY BE DNS RELATED, OR A ZABBIX ISSUE - DID NOT TRY TO DETERMINE
-#       List of comma delimited Zabbix servers and Zabbix proxies for active checks.
-ServerActive=<ServerIP Addresses> # NOTE:  RECOMMEND ONLY ONE SERVER IDENTIFIED TO PREVENT CONFUSION
-Hostname=Zabbix Server #  <--REMOVE OR COMMENT OUT THIS LINE - IT WILL PULL FROM HOSTNAME
-HostMetadata=<Appropriate Metadata Tag as defined in Auto-Registration Actions>
+Server=<ServerIP Address(es)>
+ServerActive=<ServerIP Address of Proxy to use.> # NOTE:  If no proxy is used, set to zabbix server
+Hostname=Zabbix Server #  <--REMOVE OR COMMENT OUT THIS LINE - IT WILL PULL FROM THE HOSTNAME
+HostMetadata=<Appropriate Metadata Tag as defined in Auto-Registration Actions - See Metadata Configuration Settings below>
 Include=/etc/zabbix/zabbix_agentd.d/*.conf
 ```
 
@@ -101,10 +103,6 @@ $firewall-cmd --reload
 $systemctl start zabbix-agent
 $systemctl enable zabbix-agent
 ```
-
-- Configure Security for Zabbix Agent
-
-**TBD**
 
 ### Ubuntu 16.04.x ###
 
@@ -135,13 +133,10 @@ LogFile=/var/log/zabbix/zabbix_agentd.log
 LogFileSize=0
 EnableRemoteCommands=1
 LogRemoteCommands=1
-#       List of comma delimited IP addresses, optionally in CIDR notation of Zabbix servers and Zabbix proxies.
-#       Incoming connections will be accepted only from the hosts listed here.
-Server=<ServerIP Addresses> # NOTE:  DNS NAMES DO NOT SEEM TO WORK, AT LEAST IN OUR ENVIRONMENT.MAY BE DNS RELATED, OR A ZABBIX ISSUE - DID NOT TRY TO DETERMINE
-#       List of comma delimited Zabbix servers and Zabbix proxies for active checks.
-ServerActive=<ServerIP Addresses> # NOTE:  RECOMMEND ONLY ONE SERVER IDENTIFIED TO PREVENT CONFUSION
-Hostname=Zabbix Server #  <--REMOVE OR COMMENT OUT THIS LINE - IT WILL PULL FROM HOSTNAME
-HostMetadata=Linux
+Server=<ServerIP Address(es)>
+ServerActive=<ServerIP Address of Proxy to use.> # NOTE:  If no proxy is used, set to zabbix server
+Hostname=Zabbix Server #  <--REMOVE OR COMMENT OUT THIS LINE - IT WILL PULL FROM THE HOSTNAME
+HostMetadata=<Appropriate Metadata Tag as defined in Auto-Registration Actions - See Metadata Configuration Settings below>
 Include=/etc/zabbix/zabbix_agentd.d/*.conf
 ```
 
@@ -152,8 +147,61 @@ $systemctl start zabbix-agent
 $systemctl enable zabbix-agent
 ```
 
-- Configure Security for Zabbix Agent
+## Metadata Configuration Settings ##
 
-**TBD**
+Metadata Configuration is a string of tags used in Auto-registration to apply the correct templates to the host and add
+the host to all appropriate host groups. What you make mandatory vs optional is up to you. At a minimum, I recommend any
+field used to apply templates to all servers should be mandatory fields. Application specific templates, for example,
+would not apply to this. In fact, if it is application specific, I would not make that field mandatory at all, since not
+all servers would be pegged to a specific application. Some examples include test servers, utility servers, or shared
+services servers - ones that server several purposes. Either way, this flexible field can be customized to whatever fits
+your needs. The way I use this field is to break down the following information (The first 3 are mandatory):
+
+What Operating System is used? (Used for applying to appropriate OS template and adding to an OS Host Group)
+    Linux
+    Window
+
+What type of machine is this? (Used for applying VM Template and Virtual Host Group, if appropriate)
+    Physical
+    Virtual
+
+What purpose does this server have - what is it's function? (Used to apply application specific templates and Host Group)
+    DomainController
+    WebServer
+    AppServer
+    MySQL
+
+What Application or Team does this server support? (Used to apply Team specific Host Groups and templates, if any)
+    Zabbix
+    SharedServices
+    Payroll
+
+Where is the System physically located? (Used for applying Location Host Group, and any location specific templates)
+    US
+    Mexico
+    Europe
+    Texas
+
+To see how it is applied, an example would be most helpful.  Here is an example of the Metadata field line in a Payroll
+Server located in Texas:
+
+```bash
+Metadata=Windows Virtual AppServer Payroll Texas
+```
+
+It will work equally with or without dilimiters, as long as the case and letters match.  So this would be effectively 
+equivalent:
+
+```bash
+Metadata=WindowsVirtualAppServerPayrollTexas
+```
+
+or even,
+
+```bash
+Metadata=Windows,Virtual,AppServer,Payroll,Texas
+```
+
+All seem to work fine, but for readability, I stick with the space delimited version as a personal preference.
 
 ---
