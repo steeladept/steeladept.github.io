@@ -172,6 +172,8 @@ The proxy and server are very similar. Issues found by the server apply to the p
 
 4. /var/lib/mysql/binlog.####### is filling disk. To resolve, removed older binlog files. May be worth creating a logrotate entry for it, but must find out the ramifications of that.
 
+5. The Zabbix Agent should *always* point to the Zabbix Proxy it is monitoring.  In this one case, set both SERVER= and SERVERACTIVE= to the localhost; aka 127.0.0.1 instead of the proxy you want it to be monitored from.  This one change will increase proxy performance by an order of magnitude (I saw approximate performance numbers change from 60% utilization to about 3% proxy utilization by doing this one trick!)
+
 ---
 
 ## Next Steps ##
