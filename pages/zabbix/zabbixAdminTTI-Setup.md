@@ -62,4 +62,18 @@ Speaking of templates, there are some tricks to making template creation a lot e
   * Discovery
   * Web
 
+### Useful MySQL Scripts ###
+
+* Determine overall size of database
+
+```sql
+SELECT table_schema "zabbix", sum(data_length + index_length)/1024/1024/1024 "DВ size in GB" FROM information_schema.TABLES GROUP BY table_schema;
+```
+
+* See the top 20 Largest tables in the database
+  
+```sql
+SELECT table_name, table_rows, data_length, index_length, round(((data_length + index_length) / 1024 / 1024 / 1024),2) "Size in GB" FROM information_schema.tables WHERE table_schema = "zabbix" order by round(((data_length + index_length) / 1024 / 1024 / 1024),2) DESC LIMIT 20;
+```
+
 ---
